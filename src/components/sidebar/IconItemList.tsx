@@ -1,3 +1,5 @@
+"use client";
+
 import { IconListItemType } from "@/interfaces";
 import { useAppSelector } from "@/lib/reduxHooks";
 import { motion } from "framer-motion";
