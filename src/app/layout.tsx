@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Header from "@/components/header/Header";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 const roboto = Roboto({
   weight: "400",
@@ -25,8 +26,11 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={roboto.className}>
-        <Header />
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <Sidebar />
+          <Header />
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );

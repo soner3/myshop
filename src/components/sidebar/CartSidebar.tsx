@@ -2,6 +2,8 @@
 
 import { Drawer } from "@mui/material";
 import { useState } from "react";
+import { BsCart3 } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 export default function CartSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +12,29 @@ export default function CartSidebar() {
     setIsOpen(newOpen);
   }
   return (
-    <div>
-      <button onClick={() => toggleDrawer(true)}>Cart</button>
+    <>
+      <motion.button
+        initial={{
+          scale: 0,
+        }}
+        animate={{
+          scale: 1,
+          rotate: 360,
+        }}
+        transition={{
+          duration: 0.3,
+        }}
+        whileHover={{
+          scale: 1.1,
+        }}
+        whileTap={{
+          scale: 0.95,
+        }}
+        className="flex items-center rounded-lg border p-1 hover:bg-slate-100 active:ring-2"
+        onClick={() => toggleDrawer(true)}
+      >
+        <BsCart3 className="size-7" />
+      </motion.button>
       <Drawer
         anchor="right"
         open={isOpen}
@@ -32,6 +55,6 @@ export default function CartSidebar() {
           <li>Item7</li>
         </ul>
       </Drawer>
-    </div>
+    </>
   );
 }

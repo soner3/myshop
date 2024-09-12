@@ -1,0 +1,18 @@
+"use client";
+
+import { useAppSelector } from "@/lib/reduxHooks";
+import MenuItemList from "./MenuItemList";
+import SidebarHeader from "./SidebarHeader";
+
+export default function Sidebar() {
+  const isOpen = useAppSelector((state) => state.sidebar.isOpen);
+
+  return (
+    <nav
+      className={`${isOpen ? "" : "-translate-x-full"} absolute z-10 h-screen w-[280px] rounded-r-2xl bg-blue-500 duration-300`}
+    >
+      <SidebarHeader />
+      <MenuItemList />
+    </nav>
+  );
+}

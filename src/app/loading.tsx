@@ -2,8 +2,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 export default function CircularIndeterminate() {
   return (
-    <section className="h-screen flex justify-center items-center">
-      <CircularProgress />
+    <section className="flex h-screen items-center justify-center">
+      <CircularProgress size={100} />
     </section>
   );
 }
