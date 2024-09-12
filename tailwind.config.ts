@@ -9,5 +9,18 @@ const config: Config = {
   ],
   darkMode: "selector",
   plugins: [],
+  theme: {
+    extend: {
+      animation: {
+        slide: "slide 10s linear infinite",
+      },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+    },
+  },
 };
 export default config;
