@@ -1,7 +1,7 @@
 "use client";
 
 import { MenuItemType } from "@/interfaces";
-import { BsHouseDoor } from "react-icons/bs";
+import { BsCartPlus, BsHouseDoor } from "react-icons/bs";
 import MenuItem from "./MenuItem";
 import { motion } from "framer-motion";
 import { useAppSelector } from "@/lib/reduxHooks";
@@ -15,9 +15,9 @@ const menuItems: MenuItemType[] = [
   },
   {
     id: "2",
-    href: "/",
-    text: "Homepage",
-    icon: <BsHouseDoor className="mb-1 size-5" />,
+    href: "/products/all/",
+    text: "Products",
+    icon: <BsCartPlus className="mb-1 size-5" />,
   },
   {
     id: "3",

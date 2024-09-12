@@ -34,7 +34,7 @@ export default function MenuItem({
     <motion.li variants={variants}>
       <Link
         href={href}
-        className="flex w-full items-center gap-5 rounded-lg p-2 duration-200 hover:scale-110 hover:bg-slate-100 active:scale-95"
+        className="flex w-full items-center gap-5 rounded-lg p-2 duration-200 hover:scale-110 hover:bg-white hover:bg-opacity-20 active:scale-95"
       >
         {icon}
         <p className="text-lg">{text}</p>
