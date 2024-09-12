@@ -7,6 +7,12 @@ export interface MenuItemType {
   icon: ReactNode;
 }
 
+export interface IconListItemType {
+  id: string;
+  href: string;
+  icon: ReactNode;
+}
+
 export interface SidebarState {
   isOpen: boolean;
 }

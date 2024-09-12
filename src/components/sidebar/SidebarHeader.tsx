@@ -13,7 +13,7 @@ export default function SidebarHeader() {
       <Logo />
       <button
         onClick={() => dispatch(toggleSidebar(false))}
-        className="absolute right-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border bg-white p-1 text-black duration-200 hover:scale-110 hover:bg-slate-100 active:scale-95 active:bg-slate-200"
+        className="absolute right-3 top-0 flex h-8 w-8 items-center justify-center rounded-full border bg-white p-1 text-black duration-200 hover:scale-110 hover:bg-slate-100 active:scale-95 active:bg-slate-200"
       >
         <BsArrowLeft className="size-6" />
       </button>
