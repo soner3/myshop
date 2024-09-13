@@ -43,7 +43,7 @@ export default function ProductCardBanner({ product }: { product: Product }) {
           delay: 0.5,
           duration: 0.5,
         }}
-        className="rounded-full bg-sky-500 px-4 py-2 text-white"
+        className="rounded-full bg-gradient-to-br from-sky-500 to-violet-600 px-4 py-2 text-white"
       >
         {product.price}$
       </motion.div>

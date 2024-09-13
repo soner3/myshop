@@ -2,8 +2,8 @@
 
 import { Drawer } from "@mui/material";
 import { useState } from "react";
-import { BsCart3 } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { BsBasket } from "react-icons/bs";
 
 export default function CartSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function CartSidebar() {
         className="flex items-center rounded-lg border p-1 hover:bg-slate-100 active:ring-2"
         onClick={() => toggleDrawer(true)}
       >
-        <BsCart3 className="size-7" />
+        <BsBasket className="size-7" />
       </motion.button>
       <Drawer
         anchor="right"

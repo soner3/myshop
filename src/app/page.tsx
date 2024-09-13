@@ -1,6 +1,4 @@
 import HotProductCard from "@/components/homepage/HotProducts";
-import PageLoadingSpinner from "@/ui/PageLoadingSpinner";
-import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -9,12 +7,11 @@ export default function Home() {
         welcome to shopZilla
       </h1>
       <p className="text-center text-xl font-bold capitalize">
-        here are the most popular products
+        We have over 100 Products that wait for you. Here you have 4 beatiful
+        examples.
       </p>
       <section>
-        <Suspense fallback={<PageLoadingSpinner />}>
-          <HotProductCard />
-        </Suspense>
+        <HotProductCard />
       </section>
     </>
   );

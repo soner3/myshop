@@ -1,4 +1,4 @@
-import { ProductData } from "@/interfaces";
+import { Product, ProductData } from "@/interfaces";
 
 export async function getProductCategories(): Promise<Array<string> | null> {
   try {
@@ -10,7 +10,7 @@ export async function getProductCategories(): Promise<Array<string> | null> {
   }
 }
 
-export async function getProducts(
+export async function getProductList(
   limit: number,
   skip: number,
 ): Promise<ProductData | null> {
@@ -19,6 +19,16 @@ export async function getProducts(
       `https://dummyjson.com/products?skip=${skip}&limit=${limit}`,
     );
     const productData: ProductData = await res.json();
+    return productData;
+  } catch (error) {
+    return null;
+  }
+}
+
+export async function getProduct(id: string): Promise<Product | null> {
+  try {
+    const res = await fetch(`https://dummyjson.com/products/${id}`);
+    const productData: Product = await res.json();
     return productData;
   } catch (error) {
     return null;

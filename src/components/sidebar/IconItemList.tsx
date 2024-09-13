@@ -17,11 +17,6 @@ const menuItems: IconListItemType[] = [
     href: "/products/all/",
     icon: <BsCartPlus className="size-7" />,
   },
-  {
-    id: "3",
-    href: "/",
-    icon: <BsHouseDoor className="size-7" />,
-  },
 ];
 
 const variants = {

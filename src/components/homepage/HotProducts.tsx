@@ -1,9 +1,10 @@
-import { getProducts } from "@/data/productData";
 import { ProductData } from "@/interfaces";
 import ProductCard from "./HotProductCard";
+import { getProductList } from "@/data/productData";
 
 export default async function HotProductCard() {
-  const productData: ProductData | null = await getProducts(4, 50);
+  const randomNumber = Math.floor(Math.random() * 190) + 1;
+  const productData: ProductData | null = await getProductList(4, randomNumber);
 
   return (
     <div className="grid grid-cols-1 gap-5 p-6 md:grid-cols-2">

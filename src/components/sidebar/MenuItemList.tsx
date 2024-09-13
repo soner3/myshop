@@ -19,12 +19,6 @@ const menuItems: MenuItemType[] = [
     text: "Products",
     icon: <BsCartPlus className="mb-1 size-5" />,
   },
-  {
-    id: "3",
-    href: "/",
-    text: "Homepage",
-    icon: <BsHouseDoor className="mb-1 size-5" />,
-  },
 ];
 
 const variants = {
