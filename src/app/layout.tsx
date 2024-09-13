@@ -6,6 +6,7 @@ import Header from "@/components/header/Header";
 import Sidebar from "@/components/sidebar/Sidebar";
 import IconSidebar from "@/components/sidebar/IconSidebar";
 import Footer from "@/ui/Footer";
+import CookieBanner from "@/ui/CookieBanner";
 
 const roboto = Roboto({
   weight: "400",
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="de">
       <body className={roboto.className}>
         <StoreProvider>
+          <CookieBanner />
           <Sidebar />
           <Header />
           <IconSidebar />
