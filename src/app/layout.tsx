@@ -5,6 +5,7 @@ import StoreProvider from "./StoreProvider";
 import Header from "@/components/header/Header";
 import Sidebar from "@/components/sidebar/Sidebar";
 import IconSidebar from "@/components/sidebar/IconSidebar";
+import Footer from "@/ui/Footer";
 
 const roboto = Roboto({
   weight: "400",
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Header />
           <IconSidebar />
           <main className="duration-200 md:ml-20">{children}</main>
+          <Footer />
         </StoreProvider>
       </body>
     </html>

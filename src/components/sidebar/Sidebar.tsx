@@ -9,7 +9,7 @@ export default function Sidebar() {
 
   return (
     <nav
-      className={`${isOpen ? "" : "-translate-x-full"} absolute z-10 h-screen w-[280px] rounded-r-2xl bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 text-white duration-300`}
+      className={`${isOpen ? "" : "-translate-x-full"} fixed z-20 h-screen w-[280px] rounded-r-2xl bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 text-white duration-300`}
     >
       <SidebarHeader />
       <MenuItemList />

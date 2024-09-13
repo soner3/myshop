@@ -1,4 +1,6 @@
-import HotProducts from "@/components/homepage/HotProducts";
+import HotProductCard from "@/components/homepage/HotProducts";
+import PageLoadingSpinner from "@/ui/PageLoadingSpinner";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -10,7 +12,9 @@ export default function Home() {
         Here are the most popular products
       </p>
       <section>
-        <HotProducts />
+        <Suspense fallback={<PageLoadingSpinner />}>
+          <HotProductCard />
+        </Suspense>
       </section>
     </>
   );

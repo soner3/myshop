@@ -1,9 +1,5 @@
-import CircularProgress from "@mui/material/CircularProgress";
+import PageLoadingSpinner from "@/ui/PageLoadingSpinner";
 
 export default function CircularIndeterminate() {
-  return (
-    <section className="flex h-screen items-center justify-center">
-      <CircularProgress size={100} />
-    </section>
-  );
+  return <PageLoadingSpinner />;
 }
