@@ -3,7 +3,7 @@
 import { IconListItemType } from "@/interfaces";
 import { useAppSelector } from "@/lib/reduxHooks";
 import { motion } from "framer-motion";
-import { BsCartPlus, BsHouseDoor } from "react-icons/bs";
+import { BsBagPlus, BsHouseDoor } from "react-icons/bs";
 import IconItem from "./IconItem";
 
 const menuItems: IconListItemType[] = [
@@ -15,7 +15,7 @@ const menuItems: IconListItemType[] = [
   {
     id: "2",
     href: "/products/all/",
-    icon: <BsCartPlus className="size-7" />,
+    icon: <BsBagPlus className="size-7" />,
   },
 ];
 

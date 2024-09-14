@@ -9,6 +9,7 @@ import Footer from "@/ui/Footer";
 import CookieBanner from "@/ui/CookieBanner";
 import CartSidebar from "@/components/sidebar/CartSidebar";
 import CartOverlay from "@/ui/CartOverlay";
+import ImageZoomOverlay from "@/ui/ImageZoomOverlay";
 
 const roboto = Roboto({
   weight: "400",
@@ -42,6 +43,7 @@ export default function RootLayout({
           <IconSidebar />
           <main className="duration-200 md:ml-20">{children}</main>
           <CartOverlay />
+          <ImageZoomOverlay />
           <Footer />
         </StoreProvider>
       </body>

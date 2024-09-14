@@ -1,12 +1,11 @@
 "use client";
 
-import { toggleImageFocus } from "@/lib/features/toggleSlice";
-import { useAppDispatch } from "@/lib/reduxHooks";
+import { useAppSelector } from "@/lib/reduxHooks";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
-export default function ImageCarousel({
+export default function ImageZoomCarousel({
   images,
   title,
 }: {
@@ -14,8 +13,12 @@ export default function ImageCarousel({
   title: string;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const dispatch = useAppDispatch();
+  const isImageFocusOn = useAppSelector((store) => store.sidebar.isImageFocus);
   const imageLength = images.length;
+
+  if (!isImageFocusOn) {
+    return null;
+  }
 
   function handleNextImage() {
     if (currentIndex >= imageLength - 1) {
@@ -33,23 +36,10 @@ export default function ImageCarousel({
     }
   }
 
-  useEffect(() => {
-    if (!(imageLength > 1)) {
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setCurrentIndex(currentIndex >= imageLength - 1 ? 0 : currentIndex + 1);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, imageLength]);
-
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="relative h-96 w-96 rounded-xl border-2 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl duration-300 hover:cursor-pointer hover:border-rose-600 lg:w-1/2">
+    <>
+      <div className="fixed inset-0 z-30 m-auto flex h-3/4 w-3/4 items-center justify-center rounded-xl border-2 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl duration-300 hover:cursor-pointer hover:border-rose-600">
         <Image
-          onClick={() => dispatch(toggleImageFocus(true))}
           src={images[currentIndex]}
           alt={title}
           fill
@@ -72,19 +62,19 @@ export default function ImageCarousel({
             </button>
           </>
         )}
+        {imageLength > 1 && (
+          <ul className="absolute -bottom-10 flex justify-center gap-5">
+            {images.map((_, index) => {
+              return (
+                <li
+                  key={index}
+                  className={`h-3 w-3 rounded-full bg-sky-300 ${index === currentIndex && "scale-125 bg-gradient-to-br from-sky-500 to-violet-600"}`}
+                ></li>
+              );
+            })}
+          </ul>
+        )}
       </div>
-      {imageLength > 1 && (
-        <ul className="mt-5 flex justify-center gap-5">
-          {images.map((_, index) => {
-            return (
-              <li
-                key={index}
-                className={`h-3 w-3 rounded-full bg-sky-300 ${index === currentIndex && "scale-125 bg-gradient-to-br from-sky-500 to-violet-600"}`}
-              ></li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
+    </>
   );
 }

@@ -3,7 +3,7 @@ import HotProductCard from "@/components/homepage/HotProducts";
 export default function Home() {
   return (
     <>
-      <h1 className="my-4 text-center text-3xl font-bold capitalize">
+      <h1 className="my-4 text-center text-3xl font-bold capitalize text-sky-500">
         welcome to shopZilla
       </h1>
       <p className="text-center text-xl font-bold capitalize">
