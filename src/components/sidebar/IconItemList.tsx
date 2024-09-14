@@ -29,7 +29,7 @@ const variants = {
 };
 
 export default function IconItemList() {
-  const isOpen = useAppSelector((state) => state.sidebar.isOpen);
+  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
 
   return (
     <motion.ul variants={variants} animate={isOpen ? "closed" : "open"}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { toggleCartSidebar } from "@/lib/features/sidebarSlice";
+import { toggleCartSidebar } from "@/lib/features/toggleSlice";
 import { useAppDispatch } from "@/lib/reduxHooks";
 import { motion } from "framer-motion";
 import { BsBasket } from "react-icons/bs";

@@ -31,7 +31,7 @@ const variants = {
 };
 
 export default function MenuItemList() {
-  const isOpen = useAppSelector((state) => state.sidebar.isOpen);
+  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
 
   return (
     <motion.ul

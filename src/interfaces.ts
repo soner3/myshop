@@ -13,9 +13,10 @@ export interface IconListItemType {
   icon: ReactNode;
 }
 
-export interface SidebarState {
-  isOpen: boolean;
-  cartSidebarIsOpen: boolean;
+export interface ToggleState {
+  isSidebarOpen: boolean;
+  isCartSidebarOpen: boolean;
+  isImageFocus: boolean;
 }
 
 export interface ProductReview {

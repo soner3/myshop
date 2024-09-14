@@ -1,12 +1,12 @@
 "use client";
 
-import { toggleSidebar } from "@/lib/features/sidebarSlice";
+import { toggleSidebar } from "@/lib/features/toggleSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { BsJustify } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 export default function SidebarButton() {
-  const isOpen = useAppSelector((state) => state.sidebar.isOpen);
+  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
   const dispatch = useAppDispatch();
 
   return (

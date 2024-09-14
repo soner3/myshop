@@ -1,3 +1,5 @@
+import ProductPageBody from "@/components/product/ProductPageBody";
+import ProductPageHeader from "@/components/product/ProductPageHeader";
 import { getProduct } from "@/data/productData";
 import { Product } from "@/interfaces";
 import { Metadata } from "next";
@@ -16,12 +18,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: product.description,
     };
   } else {
-    return {
-      title: "",
-    };
+    return {};
   }
 }
 
-export default function page({ params }: Props) {
-  return <div>Hello from {params.id} page</div>;
+export default async function page({ params }: Props) {
+  const product: Product | null = await getProduct(params.id);
+
+  if (!product) {
+    return (
+      <section className="flex h-screen w-screen flex-col items-center justify-center">
+        <h2 className="text-3xl font-bold capitalize">
+          This Product Does not exist
+        </h2>
+        <p className="text-xl font-bold capitalize">
+          Please search for a product at the Product Page
+        </p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="flex w-full justify-center p-4">
+      <div className="m-4 flex w-full flex-col p-4">
+        <ProductPageHeader product={product} />
+        <ProductPageBody product={product} />
+      </div>
+    </section>
+  );
 }

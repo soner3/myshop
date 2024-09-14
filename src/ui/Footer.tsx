@@ -25,7 +25,7 @@ export default function Footer() {
       <hr />
       <div className="my-4 flex justify-between p-4">
         <ul className="flex flex-col gap-2">
-          <li>&copy; Soner Astan</li>
+          <li>&copy;Soner Astan</li>
           <Link
             className="hover:text-sky-500 hover:underline"
             href={"mailto:sonerastan@icloud.com"}

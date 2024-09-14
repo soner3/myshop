@@ -1,10 +1,10 @@
 "use client";
 
-import { toggleCartSidebar } from "@/lib/features/sidebarSlice";
+import { toggleCartSidebar } from "@/lib/features/toggleSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 
 export default function CartSidebar() {
-  const isOpen = useAppSelector((store) => store.sidebar.cartSidebarIsOpen);
+  const isOpen = useAppSelector((store) => store.sidebar.isCartSidebarOpen);
   const dispatch = useAppDispatch();
 
   return (

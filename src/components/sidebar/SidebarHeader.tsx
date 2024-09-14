@@ -1,6 +1,6 @@
 "use client";
 
-import { toggleSidebar } from "@/lib/features/sidebarSlice";
+import { toggleSidebar } from "@/lib/features/toggleSlice";
 import { useAppDispatch } from "@/lib/reduxHooks";
 import Logo from "@/ui/Logo";
 import { BsArrowLeft } from "react-icons/bs";
