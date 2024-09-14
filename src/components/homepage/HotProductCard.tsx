@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from "react";
 import ProductCardBanner from "../ProductCardBanner";
 import { motion } from "framer-motion";
+import HotProductRating from "./HotProductRating";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -36,6 +37,7 @@ export default function ProductCard({ product }: { product: Product }) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
         />
+        <HotProductRating product={product} />
         <ProductCardBanner product={product} />
       </Link>
     </motion.div>

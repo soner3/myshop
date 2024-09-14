@@ -18,7 +18,7 @@ export interface SidebarState {
   cartSidebarIsOpen: boolean;
 }
 
-interface ProductReview {
+export interface ProductReview {
   rating: number;
   comment: string;
   date: string;

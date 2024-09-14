@@ -9,7 +9,7 @@ export default function CartSidebar() {
 
   return (
     <aside
-      className={`fixed right-0 top-0 z-30 h-screen bg-white ${!isOpen && "translate-x-full"} opacity-100 duration-300`}
+      className={`fixed right-0 top-0 z-30 h-screen w-1/2 bg-white md:w-[280px] lg:w-[320px] ${!isOpen && "translate-x-full"} opacity-100 duration-300`}
     >
       <ul className="h-full" onClick={() => dispatch(toggleCartSidebar(false))}>
         <li>Item1</li>
