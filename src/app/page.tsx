@@ -7,8 +7,8 @@ export default function Home() {
         welcome to shopZilla
       </h1>
       <p className="text-center text-xl font-bold capitalize">
-        We have over 100 Products that wait for you. Here you have 4 beatiful
-        examples.
+        We have over 100 Products that wait for you. Here you have 4 Products of
+        the most loved category.
       </p>
       <section>
         <HotProductCard />

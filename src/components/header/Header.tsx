@@ -1,6 +1,6 @@
 import Logo from "@/ui/Logo";
-import CartSidebar from "../sidebar/CartSidebar";
 import SidebarButton from "./SidebarButton";
+import CartSidebarButton from "./CartSidebarButton";
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
         <SidebarButton />
         <Logo />
       </div>
-      <CartSidebar />
+      <CartSidebarButton />
     </header>
   );
 }

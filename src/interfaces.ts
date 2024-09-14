@@ -15,6 +15,7 @@ export interface IconListItemType {
 
 export interface SidebarState {
   isOpen: boolean;
+  cartSidebarIsOpen: boolean;
 }
 
 interface ProductReview {
