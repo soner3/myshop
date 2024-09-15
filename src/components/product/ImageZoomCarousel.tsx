@@ -1,17 +1,10 @@
 "use client";
 
 import { useAppSelector } from "@/lib/reduxHooks";
-import Image from "next/image";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
-export default function ImageZoomCarousel({
-  images,
-  title,
-}: {
-  images: string[];
-  title: string;
-}) {
+export default function ImageZoomCarousel({ images }: { images: ReactNode[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isImageFocusOn = useAppSelector((store) => store.sidebar.isImageFocus);
   const imageLength = images.length;
@@ -38,14 +31,8 @@ export default function ImageZoomCarousel({
 
   return (
     <>
-      <div className="fixed inset-0 z-30 m-auto flex h-3/4 w-3/4 items-center justify-center rounded-xl border-2 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl duration-300 hover:cursor-pointer hover:border-rose-600">
-        <Image
-          src={images[currentIndex]}
-          alt={title}
-          fill
-          className="object-contain"
-          priority
-        />
+      <div className="fixed inset-0 z-30 m-auto flex h-3/4 w-3/4 items-center justify-center rounded-xl border-2 border-rose-600 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl">
+        <div className="relative h-full w-full">{images[currentIndex]}</div>
         {imageLength > 1 && (
           <>
             <button

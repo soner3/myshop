@@ -2,17 +2,10 @@
 
 import { toggleImageFocus } from "@/lib/features/toggleSlice";
 import { useAppDispatch } from "@/lib/reduxHooks";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
-export default function ImageCarousel({
-  images,
-  title,
-}: {
-  images: string[];
-  title: string;
-}) {
+export default function ImageCarousel({ images }: { images: ReactNode[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const dispatch = useAppDispatch();
   const imageLength = images.length;
@@ -48,14 +41,12 @@ export default function ImageCarousel({
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="relative h-96 w-96 rounded-xl border-2 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl duration-300 hover:cursor-pointer hover:border-rose-600 lg:w-1/2">
-        <Image
+        <button
           onClick={() => dispatch(toggleImageFocus(true))}
-          src={images[currentIndex]}
-          alt={title}
-          fill
-          className="object-contain"
-          priority
-        />
+          className="relative h-full w-full"
+        >
+          {images[currentIndex]}
+        </button>
         {imageLength > 1 && (
           <>
             <button

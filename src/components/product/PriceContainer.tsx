@@ -1,11 +1,7 @@
 import { Product } from "@/interfaces";
 import AddToCartContainer from "./AddToCartContainer";
 
-export default function ProductPagePriceContainer({
-  product,
-}: {
-  product: Product;
-}) {
+export default function PriceContainer({ product }: { product: Product }) {
   return (
     <div className="mt-8 grid grid-cols-1 rounded-xl border p-8 shadow-xl md:grid-cols-2">
       <div className="flex flex-col gap-2">
@@ -15,9 +11,9 @@ export default function ProductPagePriceContainer({
         <p className="capitalize">{product.warrantyInformation}</p>
         <p className="capitalize">{product.returnPolicy}</p>
         <p
-          className={`${product.stock > 0 ? "text-green-500" : "text-red-500"}`}
+          className={`${product.stock > 0 ? "text-green-500" : "text-red-600"} font-semibold capitalize`}
         >
-          Stock: {product.stock} in stock
+          {product.stock} in stock
         </p>
       </div>
       <AddToCartContainer product={product} />
