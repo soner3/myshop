@@ -6,7 +6,7 @@ import { BsJustify } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 export default function SidebarButton() {
-  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
+  const isOpen = useAppSelector((state) => state.toggle.isSidebarOpen);
   const dispatch = useAppDispatch();
 
   return (

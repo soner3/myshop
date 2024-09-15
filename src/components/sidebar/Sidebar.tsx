@@ -5,7 +5,7 @@ import MenuItemList from "./MenuItemList";
 import SidebarHeader from "./SidebarHeader";
 
 export default function Sidebar() {
-  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
+  const isOpen = useAppSelector((state) => state.toggle.isSidebarOpen);
 
   return (
     <nav

@@ -4,7 +4,7 @@ import { toggleCartSidebar } from "@/lib/features/toggleSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 
 export default function CartOverlay() {
-  const isOpen = useAppSelector((store) => store.sidebar.isCartSidebarOpen);
+  const isOpen = useAppSelector((store) => store.toggle.isCartSidebarOpen);
   const dispatch = useAppDispatch();
 
   if (!isOpen) {

@@ -27,23 +27,23 @@ export default async function page({ params }: Props) {
 
   if (!product) {
     return (
-      <section className="flex h-screen w-screen flex-col items-center justify-center">
+      <div className="flex h-screen w-screen flex-col items-center justify-center">
         <h2 className="text-3xl font-bold capitalize">
           This Product Does not exist
         </h2>
         <p className="text-xl font-bold capitalize">
           Please search for a product at the Product Page
         </p>
-      </section>
+      </div>
     );
   }
 
   return (
-    <section className="flex w-full justify-center p-4">
+    <div className="flex w-full justify-center p-4">
       <div className="m-4 flex w-full flex-col p-4">
         <ProductPageHeader product={product} />
         <ProductPageBody product={product} />
       </div>
-    </section>
+    </div>
   );
 }

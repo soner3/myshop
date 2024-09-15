@@ -6,7 +6,7 @@ import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
 export default function ImageZoomCarousel({ images }: { images: ReactNode[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isImageFocusOn = useAppSelector((store) => store.sidebar.isImageFocus);
+  const isImageFocusOn = useAppSelector((store) => store.toggle.isImageFocus);
   const imageLength = images.length;
 
   if (!isImageFocusOn) {

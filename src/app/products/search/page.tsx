@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
-  title: "All",
+  title: "Search",
 };
 
 export default function Page() {
-  return <div>All page</div>;
+  return <div>Search Page</div>;
 }

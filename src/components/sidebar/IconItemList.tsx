@@ -14,7 +14,7 @@ const menuItems: IconListItemType[] = [
   },
   {
     id: "2",
-    href: "/products/all/",
+    href: "/products/search/all/",
     icon: <BsBagPlus className="size-7" />,
   },
 ];
@@ -29,7 +29,7 @@ const variants = {
 };
 
 export default function IconItemList() {
-  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
+  const isOpen = useAppSelector((state) => state.toggle.isSidebarOpen);
 
   return (
     <motion.ul variants={variants} animate={isOpen ? "closed" : "open"}>

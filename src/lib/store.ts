@@ -4,7 +4,7 @@ import toggleReducer from "./features/toggleSlice";
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      sidebar: toggleReducer,
+      toggle: toggleReducer,
     },
   });
 };

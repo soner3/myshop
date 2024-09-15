@@ -15,8 +15,8 @@ const menuItems: MenuItemType[] = [
   },
   {
     id: "2",
-    href: "/products/all/",
-    text: "Products",
+    href: "/products/search/all/",
+    text: "All Products",
     icon: <BsBagPlus className="mb-1 size-5" />,
   },
 ];
@@ -31,7 +31,7 @@ const variants = {
 };
 
 export default function MenuItemList() {
-  const isOpen = useAppSelector((state) => state.sidebar.isSidebarOpen);
+  const isOpen = useAppSelector((state) => state.toggle.isSidebarOpen);
 
   return (
     <motion.ul

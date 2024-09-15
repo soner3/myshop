@@ -59,9 +59,9 @@ export default function ProductInfoCard({ product }: { product: Product }) {
           </tr>
         </thead>
         <tbody className="text-center capitalize">
-          {product.reviews.map((review) => {
+          {product.reviews.map((review, index) => {
             return (
-              <tr key={review.date} className="border">
+              <tr key={index} className="border">
                 <td>{review.reviewerName}</td>
                 <td className="border-l">
                   <div className="flex flex-col items-center justify-center">

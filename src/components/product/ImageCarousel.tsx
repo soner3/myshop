@@ -33,7 +33,7 @@ export default function ImageCarousel({ images }: { images: ReactNode[] }) {
 
     const interval = setInterval(() => {
       setCurrentIndex(currentIndex >= imageLength - 1 ? 0 : currentIndex + 1);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [currentIndex, imageLength]);
