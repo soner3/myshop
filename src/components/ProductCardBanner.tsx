@@ -16,7 +16,7 @@ export default function ProductCardBanner({ product }: { product: Product }) {
         delay: 0.5,
         duration: 1,
       }}
-      className="absolute bottom-3 left-3 flex w-auto items-center gap-3 rounded-full border bg-white p-1 px-2 text-left font-semibold shadow-lg"
+      className="absolute bottom-3 left-3 flex items-center justify-center gap-3 rounded-full border bg-white px-2 py-1 text-center text-sm font-semibold"
     >
       <motion.div
         initial={{

@@ -46,3 +46,21 @@ export async function getProduct(id: string): Promise<Product | null> {
     return null;
   }
 }
+
+export async function getProductByCategory(
+  category: string,
+): Promise<ProductData | null> {
+  try {
+    const res = await fetch(
+      `https://dummyjson.com/products/category/${category}`,
+    );
+    if (res.ok) {
+      const productData: ProductData = await res.json();
+      return productData;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    return null;
+  }
+}

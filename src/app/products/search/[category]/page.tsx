@@ -1,3 +1,4 @@
+import ProductCategoryContainer from "@/components/search/ProductCategoryContainer";
 import { getProductCategories } from "@/data/productData";
 import { Metadata } from "next";
 import React from "react";
@@ -28,5 +29,9 @@ export async function generateStaticParams() {
 }
 
 export default function Page({ params }: { params: { category: string } }) {
-  return <div>page {params.category}</div>;
+  return (
+    <div className="flex w-full flex-col gap-5">
+      <ProductCategoryContainer category={params.category} />
+    </div>
+  );
 }
