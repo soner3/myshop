@@ -1,15 +1,25 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useParams, usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export default function CategorySelection({
   categories,
 }: {
   categories: string[];
 }) {
-  const [currentCategory, setCurrentCategory] = useState("all");
+  const { category } = useParams();
+  const path = usePathname();
+  const [currentCategory, setCurrentCategory] = useState(category);
   const router = useRouter();
+
+  useEffect(() => {
+    if (path.includes("all")) {
+      setCurrentCategory("all");
+      return;
+    }
+    return;
+  }, [path]);
 
   function handleCategoryChange(category: string) {
     setCurrentCategory(category);
