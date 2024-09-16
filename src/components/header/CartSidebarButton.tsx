@@ -27,7 +27,7 @@ export default function CartSidebarButton() {
         whileTap={{
           scale: 0.95,
         }}
-        className="flex items-center rounded-lg border p-1 hover:bg-slate-100 active:ring-2"
+        className="flex items-center rounded-lg border border-rose-600 p-1 ring-rose-600 hover:bg-slate-100 active:ring-2 dark:hover:bg-slate-800"
         onClick={() => dispatch(toggleCartSidebar(true))}
       >
         <BsBasket className="size-7" />

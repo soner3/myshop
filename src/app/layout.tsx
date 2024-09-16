@@ -10,6 +10,7 @@ import CookieBanner from "@/ui/CookieBanner";
 import CartSidebar from "@/components/sidebar/CartSidebar";
 import CartOverlay from "@/ui/CartOverlay";
 import ImageZoomOverlay from "@/ui/ImageZoomOverlay";
+import ApplyTheme from "@/ui/ApplyTheme";
 
 const roboto = Roboto({
   weight: "400",
@@ -34,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="scroll-smooth">
-      <body className={roboto.className}>
+      <body className={`${roboto.className} dark:bg-slate-900 dark:text-white`}>
         <StoreProvider>
           <Header />
           <Sidebar />
@@ -45,6 +46,7 @@ export default function RootLayout({
           <CartOverlay />
           <ImageZoomOverlay />
           <Footer />
+          <ApplyTheme />
         </StoreProvider>
       </body>
     </html>

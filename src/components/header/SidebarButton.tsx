@@ -28,7 +28,7 @@ export default function SidebarButton() {
         scale: 0.95,
       }}
       onClick={() => dispatch(toggleSidebar(!isOpen))}
-      className="flex items-center rounded-lg border p-1 hover:bg-slate-100 active:ring-2"
+      className="flex items-center rounded-lg border border-violet-600 p-1 ring-violet-600 hover:bg-slate-100 active:ring-2 dark:hover:bg-slate-800"
     >
       <BsJustify className="size-7" />
     </motion.button>

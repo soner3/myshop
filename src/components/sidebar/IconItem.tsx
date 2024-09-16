@@ -32,7 +32,7 @@ export default function IconItem({
     <motion.li variants={variants}>
       <Link
         href={href}
-        className="flex justify-center p-6 text-white duration-200 hover:scale-110 hover:bg-white hover:bg-opacity-20 active:scale-95"
+        className="flex justify-center p-6 text-white duration-200 hover:bg-white hover:bg-opacity-20 active:scale-95"
       >
         {icon}
       </Link>

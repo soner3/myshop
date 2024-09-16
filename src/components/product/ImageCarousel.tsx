@@ -40,7 +40,7 @@ export default function ImageCarousel({ images }: { images: ReactNode[] }) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="relative h-96 w-96 rounded-xl border-2 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl duration-300 hover:cursor-pointer hover:border-rose-600 md:w-3/4">
+      <div className="relative h-96 w-96 rounded-xl border-2 bg-gradient-to-br from-sky-500 via-violet-600 to-rose-600 shadow-2xl duration-300 hover:cursor-pointer hover:border-rose-600 md:w-3/4 dark:border-rose-600">
         <button
           onClick={() => dispatch(toggleImageFocus(true))}
           className="relative h-full w-full"

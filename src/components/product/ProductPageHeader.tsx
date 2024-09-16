@@ -16,6 +16,11 @@ export default function ProductPageHeader({ product }: { product: Product }) {
             precision={0.2}
             readOnly
             className="mb-1"
+            sx={{
+              "& .MuiRating-iconEmpty": {
+                color: "#faaf00",
+              },
+            }}
           />
         </div>
       </div>
@@ -25,7 +30,7 @@ export default function ProductPageHeader({ product }: { product: Product }) {
           return (
             <span
               key={index}
-              className="rounded-full bg-gradient-to-br from-sky-500 to-violet-600 px-2 py-1 capitalize text-white"
+              className="rounded-full bg-gradient-to-br from-sky-500 to-violet-600 px-2 py-1 capitalize text-white dark:from-violet-600 dark:to-rose-600"
             >
               {tag}
             </span>

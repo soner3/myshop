@@ -4,8 +4,8 @@ import { Product } from "@/interfaces";
 import React, { useState } from "react";
 import ProductListItem from "./ProductListItem";
 import Link from "next/link";
-import { Pagination } from "@mui/material";
 import { getProductList } from "@/data/productData";
+import Pagination from "./Pagination";
 
 export default function ProductList({
   products,
@@ -21,10 +21,7 @@ export default function ProductList({
   const [page, setPage] = useState(1);
   const [allProducts, setAllProducts] = useState(products);
 
-  async function handlePaginationChange(
-    _: React.ChangeEvent<unknown>,
-    value: number,
-  ) {
+  async function handlePaginationChange(value: number) {
     setPage(value);
 
     const newAllProducts = await getProductList(
@@ -40,10 +37,10 @@ export default function ProductList({
     <>
       {isAll && (
         <Pagination
-          count={Math.ceil(count / limit)}
           page={page}
-          onChange={handlePaginationChange}
-          color="primary"
+          handleChange={handlePaginationChange}
+          count={count}
+          limit={limit}
         />
       )}
       <ul className="flex flex-wrap justify-center gap-3">
@@ -52,7 +49,7 @@ export default function ProductList({
             {allProducts.map((product) => {
               return (
                 <Link
-                  className="rounded-xl border from-sky-500 via-violet-600 to-rose-600 shadow-xl duration-300 hover:scale-105 hover:border-rose-600 hover:bg-gradient-to-br"
+                  className="rounded-xl border from-sky-500 via-violet-600 to-rose-600 shadow-xl duration-300 hover:scale-105 hover:border-rose-600 hover:bg-gradient-to-br dark:border-rose-600"
                   key={product.id}
                   href={`/products/${product.id}/`}
                 >
@@ -79,10 +76,10 @@ export default function ProductList({
       </ul>
       {isAll && (
         <Pagination
-          count={Math.ceil(count / limit)}
           page={page}
-          onChange={handlePaginationChange}
-          color="primary"
+          handleChange={handlePaginationChange}
+          count={count}
+          limit={limit}
         />
       )}
     </>

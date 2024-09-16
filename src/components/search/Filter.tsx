@@ -16,7 +16,7 @@ export default async function Filter() {
   const categories: string[] = ["all", ...categoryList];
 
   return (
-    <div className="mb-8 flex w-full flex-col items-center justify-center rounded-xl border py-4 shadow-xl">
+    <div className="mb-8 flex w-full flex-col items-center justify-center rounded-xl border py-4 shadow-xl dark:border-rose-600">
       <h2 className="text-xl font-semibold text-sky-500">Filter</h2>
       <CategorySelection categories={categories} />
     </div>

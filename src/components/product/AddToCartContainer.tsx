@@ -22,7 +22,7 @@ export default function AddToCartContainer({ product }: { product: Product }) {
           <select
             name="quantitySelectGroup"
             id="quantitySelect"
-            className="w-full cursor-pointer rounded-xl border-2 border-sky-500 bg-white p-2 outline-none duration-300 active:border-none active:ring-4"
+            className="w-full cursor-pointer rounded-xl border-2 border-sky-500 bg-white p-2 text-black outline-none duration-300 active:border-none active:ring-4 dark:border-rose-600 dark:ring-rose-600"
             onChange={(event) => handleQuantityChange(event.target.value)}
             value={quantity}
           >
@@ -34,7 +34,7 @@ export default function AddToCartContainer({ product }: { product: Product }) {
               );
             })}
           </select>
-          <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 capitalize text-white duration-200 hover:scale-105 active:scale-95">
+          <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 capitalize text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600">
             <BsCartPlus className="size-7" />
             <span className="font-semibold">add to cart</span>
           </button>

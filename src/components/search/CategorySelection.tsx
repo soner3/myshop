@@ -28,7 +28,7 @@ export default function CategorySelection({
 
   return (
     <select
-      className="m-2 w-3/4 cursor-pointer rounded-xl border-2 border-sky-500 bg-white p-2 capitalize outline-none active:border-none active:ring-2"
+      className="m-2 w-3/4 cursor-pointer rounded-xl border-2 border-sky-500 bg-white p-2 capitalize text-black outline-none active:border-none active:ring-2 dark:border-rose-600 dark:ring-rose-600"
       value={currentCategory}
       onChange={(event) => handleCategoryChange(event.target.value)}
     >

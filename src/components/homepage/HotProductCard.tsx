@@ -27,7 +27,7 @@ export default function ProductCard({ product }: { product: Product }) {
     >
       <Link
         href={`/products/${product.id}`}
-        className="group relative flex h-72 flex-col rounded-lg border-2 from-sky-500 via-violet-600 to-rose-600 shadow-lg transition-all duration-500 hover:border-2 hover:border-rose-600 hover:bg-gradient-to-br"
+        className="group relative flex h-72 flex-col rounded-lg border-2 from-sky-500 via-violet-600 to-rose-600 shadow-lg hover:border-2 hover:border-rose-600 hover:bg-gradient-to-br dark:border-rose-600"
       >
         <Image
           className="object-contain duration-300 group-hover:scale-105"

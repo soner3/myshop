@@ -22,7 +22,7 @@ const personalInfo: {
 export default function Footer() {
   return (
     <footer className="duration-200 md:ml-20">
-      <hr />
+      <hr className="dark:border-rose-600" />
       <div className="my-4 flex justify-between p-4">
         <ul className="flex flex-col gap-2">
           <li>&copy;Soner Astan</li>
