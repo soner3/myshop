@@ -71,3 +71,13 @@ export interface ProductData {
   skip: number;
   limit: number;
 }
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+  totalPrice: number;
+}
+
+export interface Cart {
+  cartItemList: CartItem[];
+}

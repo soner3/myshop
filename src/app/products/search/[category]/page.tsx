@@ -5,7 +5,6 @@ import React from "react";
 
 type Props = {
   params: { category: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -28,7 +27,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: { params: { category: string } }) {
+export default function Page({ params }: Props) {
   return (
     <div className="flex w-full flex-col gap-5">
       <ProductCategoryContainer category={params.category} />

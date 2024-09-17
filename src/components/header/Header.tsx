@@ -11,8 +11,8 @@ export default function Header() {
         <Logo />
       </div>
       <div className="flex gap-5">
-        <ToggleTheme />
         <CartSidebarButton />
+        <ToggleTheme />
       </div>
     </header>
   );

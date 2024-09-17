@@ -1,11 +1,13 @@
 "use client";
 
 import { toggleCartSidebar } from "@/lib/features/toggleSlice";
-import { useAppDispatch } from "@/lib/reduxHooks";
+import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { motion } from "framer-motion";
 import { BsBasket } from "react-icons/bs";
+import Badge from "./Badge";
 
 export default function CartSidebarButton() {
+  const cartItemList = useAppSelector((store) => store.cart.cartItemList);
   const dispatch = useAppDispatch();
 
   return (
@@ -27,10 +29,11 @@ export default function CartSidebarButton() {
         whileTap={{
           scale: 0.95,
         }}
-        className="flex items-center rounded-lg border border-rose-600 p-1 ring-rose-600 hover:bg-slate-100 active:ring-2 dark:hover:bg-slate-800"
+        className="relative flex items-center rounded-lg border border-rose-600 p-1 ring-rose-600 hover:bg-slate-100 active:ring-2 dark:hover:bg-slate-800"
         onClick={() => dispatch(toggleCartSidebar(true))}
       >
         <BsBasket className="size-7" />
+        {cartItemList.length > 0 && <Badge>{cartItemList.length}</Badge>}
       </motion.button>
     </>
   );

@@ -1,6 +1,8 @@
 "use client";
 
 import { Product } from "@/interfaces";
+import { addToCart } from "@/lib/features/cartSlice";
+import { useAppDispatch } from "@/lib/reduxHooks";
 import { useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
 
@@ -10,6 +12,7 @@ export default function AddToCartContainer({ product }: { product: Product }) {
     { length: product.stock },
     (_, index) => index + 1,
   );
+  const dispatch = useAppDispatch();
 
   function handleQuantityChange(value: string) {
     setQuantity(Number(value));
@@ -34,7 +37,18 @@ export default function AddToCartContainer({ product }: { product: Product }) {
               );
             })}
           </select>
-          <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 capitalize text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600">
+          <button
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  product: product,
+                  quantity: quantity,
+                  totalPrice: product.price * quantity,
+                }),
+              )
+            }
+            className="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 capitalize text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600"
+          >
             <BsCartPlus className="size-7" />
             <span className="font-semibold">add to cart</span>
           </button>

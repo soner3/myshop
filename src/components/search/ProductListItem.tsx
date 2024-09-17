@@ -28,6 +28,7 @@ export default function ProductListItem({ product }: { product: Product }) {
         src={product.images[0]}
         alt={product.title}
         fill
+        priority
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-contain"
       />

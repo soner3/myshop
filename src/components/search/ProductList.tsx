@@ -6,6 +6,7 @@ import ProductListItem from "./ProductListItem";
 import Link from "next/link";
 import { getProductList } from "@/data/productData";
 import Pagination from "./Pagination";
+import { useSearchParams } from "next/navigation";
 
 export default function ProductList({
   products,
@@ -20,6 +21,8 @@ export default function ProductList({
 }) {
   const [page, setPage] = useState(1);
   const [allProducts, setAllProducts] = useState(products);
+  const searchParams = useSearchParams();
+  const sort = searchParams.get("sort");
 
   async function handlePaginationChange(value: number) {
     setPage(value);
@@ -31,6 +34,40 @@ export default function ProductList({
     if (newAllProducts) {
       setAllProducts(newAllProducts.products);
     }
+  }
+
+  switch (sort) {
+    case "price-asc":
+      if (isAll) {
+        allProducts.sort((a, b) => a.price - b.price);
+        break;
+      }
+      products.sort((a, b) => a.price - b.price);
+      break;
+    case "price-desc":
+      if (isAll) {
+        allProducts.sort((a, b) => b.price - a.price);
+        break;
+      }
+      products.sort((a, b) => b.price - a.price);
+      break;
+    case "rating-asc":
+      if (isAll) {
+        allProducts.sort((a, b) => a.rating - b.rating);
+        break;
+      }
+      products.sort((a, b) => a.rating - b.rating);
+      break;
+    case "rating-desc":
+      if (isAll) {
+        allProducts.sort((a, b) => b.rating - a.rating);
+        break;
+      }
+      products.sort((a, b) => b.rating - a.rating);
+      break;
+
+    default:
+      break;
   }
 
   return (
@@ -63,7 +100,7 @@ export default function ProductList({
             {products.map((product) => {
               return (
                 <Link
-                  className="rounded-xl border from-sky-500 via-violet-600 to-rose-600 shadow-xl duration-300 hover:scale-105 hover:border-rose-600 hover:bg-gradient-to-br"
+                  className="rounded-xl border from-sky-500 via-violet-600 to-rose-600 shadow-xl duration-300 hover:scale-105 hover:border-rose-600 hover:bg-gradient-to-br dark:border-rose-600"
                   key={product.id}
                   href={`/products/${product.id}/`}
                 >

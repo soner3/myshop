@@ -36,9 +36,9 @@ at process.callbackTrampoline (node:internal/async_hooks:130:17) {
 code: 'UND_ERR_CONNECT_TIMEOUT'
 }"
 
-This means that the request took to much time. This error is most likely to occure at the images. If an image is not loading it means that the request needed to much time to process due to ypur internet connection.
+This means that the request took to much time. This error is most likely to occure at the images. If an image is not loading it means that the request needed to much time to process due to your internet connection.
 
 ## Data
 
 All Data including images comes from "https://dummyjson.com/docs/products".
-It also allows mutations like updating and adding a product at the given endpoints
+INFO: Some Images have a low quality or are outside of the box
