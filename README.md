@@ -1,7 +1,6 @@
 # ShopZilla
 
 An Online Shop as a final coding project for my course
-test
 
 ## Start the Project
 
