@@ -22,9 +22,11 @@ const cartSlice = createSlice({
       });
 
       if (itemInCart) {
+        localStorage.setItem("cart", JSON.stringify(state.cartItemList));
         return;
       } else {
         state.cartItemList.push(newItem);
+        localStorage.setItem("cart", JSON.stringify(state.cartItemList));
       }
     },
     incraseQuantity: (state, action: PayloadAction<CartItem>) => {
@@ -36,6 +38,7 @@ const cartSlice = createSlice({
           item.totalPrice = item.quantity * item.product.price;
         }
       });
+      localStorage.setItem("cart", JSON.stringify(state.cartItemList));
     },
     decraseQuantity: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
@@ -53,6 +56,7 @@ const cartSlice = createSlice({
           }
         }
       });
+      localStorage.setItem("cart", JSON.stringify(state.cartItemList));
     },
   },
 });

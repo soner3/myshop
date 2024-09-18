@@ -1,20 +1,28 @@
 import { getProductByCategory, getProductList } from "@/data/productData";
 import React from "react";
 import ProductList from "./ProductList";
+import { ProductData } from "@/interfaces";
 
 export default async function ProductCategoryContainer({
   category,
+  searchProductData,
 }: {
-  category: string;
+  category?: string;
+  searchProductData?: ProductData;
 }) {
   let productData = null;
+  if (searchProductData) {
+    productData = searchProductData;
+  }
   const limit = 30;
   const skip = 0;
 
   if (category === "all") {
     productData = await getProductList(limit, skip);
   } else {
-    productData = await getProductByCategory(category);
+    if (category) {
+      productData = await getProductByCategory(category);
+    }
   }
 
   if (!productData) {

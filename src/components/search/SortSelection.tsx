@@ -6,23 +6,33 @@ import { useEffect, useState } from "react";
 export default function SortSelection() {
   const searchParams = useSearchParams();
   const sort = searchParams.get("sort");
+  const searchInput = searchParams.get("searchInput");
   const [sorting, setSorting] = useState(sort ? sort : "none");
   const router = useRouter();
   const path = usePathname();
 
   useEffect(() => {
     if (sorting !== "none") {
-      router.push(`${path}?sort=${sorting}`);
+      if (!(path === "/products/search")) {
+        router.push(`${path}?sort=${sorting}`);
+      }
     }
   }, [path, router, sorting]);
 
   function handleSortChange(value: string) {
     setSorting(value);
     if (value === "none") {
-      router.replace(path);
-      router.refresh();
+      if (searchInput) {
+        router.push(`${path}?searchInput=${searchInput}`);
+      } else {
+        router.push(path);
+      }
     } else {
-      router.push(`${path}?sort=${value}`);
+      if (searchInput) {
+        router.push(`${path}?searchInput=${searchInput}&sort=${value}`);
+      } else {
+        router.push(`${path}?sort=${value}`);
+      }
     }
   }
 

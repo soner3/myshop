@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import toggleReducer from "./features/toggleSlice";
 import cartReducer from "./features/cartSlice";
+import searchReducer from "./features/searchSlice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       toggle: toggleReducer,
       cart: cartReducer,
+      search: searchReducer,
     },
   });
 };

@@ -81,3 +81,7 @@ export interface CartItem {
 export interface Cart {
   cartItemList: CartItem[];
 }
+
+export interface SearchState {
+  search: string;
+}

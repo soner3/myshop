@@ -80,7 +80,7 @@ export default function ProductList({
           limit={limit}
         />
       )}
-      <ul className="flex flex-wrap justify-center gap-3">
+      <ul className="flex flex-wrap justify-center gap-8">
         {isAll ? (
           <>
             {allProducts.map((product) => {

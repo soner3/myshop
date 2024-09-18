@@ -2,6 +2,7 @@ import Logo from "@/ui/Logo";
 import SidebarButton from "./SidebarButton";
 import CartSidebarButton from "./CartSidebarButton";
 import ToggleTheme from "./ToggleTheme";
+import HeaderSearch from "./HeaderSearch";
 
 export default function Header() {
   return (
@@ -10,6 +11,7 @@ export default function Header() {
         <SidebarButton />
         <Logo />
       </div>
+      <HeaderSearch />
       <div className="flex gap-5">
         <CartSidebarButton />
         <ToggleTheme />

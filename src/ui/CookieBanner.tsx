@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
 } from "@mui/material";
 import { useState } from "react";
@@ -26,10 +25,10 @@ export default function CookieBanner() {
         Cookie Agreement
       </DialogTitle>
       <DialogContent className="dark:bg-slate-900">
-        <DialogContentText className="capitalize dark:text-white">
+        <p className="capitalize dark:text-white">
           If you are using this Website you have to agree with the fact that we
           are using Cookies. We do not save personal data.
-        </DialogContentText>
+        </p>
       </DialogContent>
       <DialogActions className="dark:bg-slate-900 dark:text-white">
         <button

@@ -8,9 +8,6 @@ import CartInfo from "./CartInfo";
 
 export default function CartItemList() {
   const { cartItemList } = useAppSelector((store) => store.cart);
-
-  console.log(cartItemList);
-
   return (
     <>
       <ul className="flex h-full flex-grow flex-col gap-3 overflow-y-scroll p-2">

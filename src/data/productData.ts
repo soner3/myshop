@@ -64,3 +64,21 @@ export async function getProductByCategory(
     return null;
   }
 }
+
+export async function searchProduct(
+  search: string,
+): Promise<ProductData | null> {
+  try {
+    const res = await fetch(
+      `https://dummyjson.com/products/search?q=${search}`,
+    );
+    if (res.ok) {
+      const productData: ProductData = await res.json();
+      return productData;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    return null;
+  }
+}
