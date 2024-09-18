@@ -27,8 +27,36 @@ const cartSlice = createSlice({
         state.cartItemList.push(newItem);
       }
     },
+    incraseQuantity: (state, action: PayloadAction<CartItem>) => {
+      const newItem = action.payload;
+
+      state.cartItemList.forEach((item) => {
+        if (item.product.id === newItem.product.id) {
+          item.quantity += 1;
+          item.totalPrice = item.quantity * item.product.price;
+        }
+      });
+    },
+    decraseQuantity: (state, action: PayloadAction<CartItem>) => {
+      const newItem = action.payload;
+
+      state.cartItemList.forEach((item) => {
+        if (item.product.id === newItem.product.id) {
+          if (item.quantity <= 1) {
+            const newCart = state.cartItemList.filter((oldCartItem) => {
+              return oldCartItem.product.id !== newItem.product.id;
+            });
+            state.cartItemList = newCart;
+          } else {
+            item.quantity -= 1;
+            item.totalPrice = item.quantity * item.product.price;
+          }
+        }
+      });
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, incraseQuantity, decraseQuantity } =
+  cartSlice.actions;
 export default cartSlice.reducer;

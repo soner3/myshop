@@ -33,7 +33,13 @@ export default function CartSidebarButton() {
         onClick={() => dispatch(toggleCartSidebar(true))}
       >
         <BsBasket className="size-7" />
-        {cartItemList.length > 0 && <Badge>{cartItemList.length}</Badge>}
+        {cartItemList.length > 0 && cartItemList.length < 10 ? (
+          <Badge>{cartItemList.length}</Badge>
+        ) : cartItemList.length > 9 ? (
+          <Badge>9+</Badge>
+        ) : (
+          ""
+        )}
       </motion.button>
     </>
   );
