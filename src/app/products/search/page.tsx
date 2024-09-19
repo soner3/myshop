@@ -27,7 +27,9 @@ export default async function Page({ searchParams }: Props) {
         searchProductData.products.length > 0 ? (
           <ProductCategoryContainer searchProductData={searchProductData} />
         ) : (
-          <p>No product With &ldquo;{searchInput}&ldquo; Found</p>
+          <p className="text-center text-xl font-bold">
+            No product With &ldquo;{searchInput}&ldquo; Found
+          </p>
         )
       ) : (
         <p className="capitalize">An error occurred, please try again</p>
