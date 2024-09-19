@@ -6,7 +6,7 @@ An Online Shop as a final coding project for my course
 
 To start the project you have to run the following commands in the Terminal
 
-1. npm run install
+1. npm install
 2. npm run build
 3. npm run start
 
