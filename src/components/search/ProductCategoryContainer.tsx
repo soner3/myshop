@@ -1,7 +1,8 @@
 import { getProductByCategory, getProductList } from "@/data/productData";
-import React from "react";
+import React, { Suspense } from "react";
 import ProductList from "./ProductList";
 import { ProductData } from "@/interfaces";
+import PageLoadingSpinner from "@/ui/PageLoadingSpinner";
 
 export default async function ProductCategoryContainer({
   category,
@@ -35,12 +36,14 @@ export default async function ProductCategoryContainer({
 
   return (
     <>
-      <ProductList
-        products={productData.products}
-        count={productData.total}
-        limit={limit}
-        isAll={category === "all"}
-      />
+      <Suspense fallback={<PageLoadingSpinner />}>
+        <ProductList
+          products={productData.products}
+          count={productData.total}
+          limit={limit}
+          isAll={category === "all"}
+        />
+      </Suspense>
     </>
   );
 }

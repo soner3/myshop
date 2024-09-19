@@ -1,5 +1,5 @@
 import { getProductCategories } from "@/data/productData";
-import React from "react";
+import React, { Suspense } from "react";
 import CategorySelection from "./CategorySelection";
 import SortSelection from "./SortSelection";
 
@@ -20,7 +20,9 @@ export default async function Filter() {
     <div className="mb-8 flex w-full flex-col items-center justify-center rounded-xl border py-4 shadow-xl dark:border-rose-600">
       <h2 className="mb-2 text-left text-3xl font-bold text-sky-500">Filter</h2>
       <CategorySelection categories={categories} />
-      <SortSelection />
+      <Suspense fallback={"Loading..."}>
+        <SortSelection />
+      </Suspense>
     </div>
   );
 }

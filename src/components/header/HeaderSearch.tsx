@@ -2,14 +2,12 @@
 
 import { searchChange } from "@/lib/features/searchSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { BsSearch } from "react-icons/bs";
 
 export default function HeaderSearch() {
   const { search } = useAppSelector((store) => store.search);
   const dispatch = useAppDispatch();
-  const searchParams = useSearchParams();
-  const sort = searchParams.get("sort");
   const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -17,11 +15,8 @@ export default function HeaderSearch() {
     if (search.length <= 0) {
       return;
     }
-    if (sort) {
-      router.push(`/products/search?searchInput=${search}&sort=${sort}`);
-    } else {
-      router.push(`/products/search?searchInput=${search}`);
-    }
+
+    router.push(`/products/search?searchInput=${search}`);
     dispatch(searchChange(""));
   }
 
