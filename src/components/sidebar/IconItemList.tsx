@@ -3,7 +3,7 @@
 import { IconListItemType } from "@/interfaces";
 import { useAppSelector } from "@/lib/reduxHooks";
 import { motion } from "framer-motion";
-import { BsBagPlus, BsHouseDoor } from "react-icons/bs";
+import { BsBagPlus, BsCashCoin, BsHouseDoor } from "react-icons/bs";
 import IconItem from "./IconItem";
 
 const menuItems: IconListItemType[] = [
@@ -16,6 +16,11 @@ const menuItems: IconListItemType[] = [
     id: "2",
     href: "/products/search/all/",
     icon: <BsBagPlus className="size-7" />,
+  },
+  {
+    id: "3",
+    href: "/checkout/information/",
+    icon: <BsCashCoin className="size-7" />,
   },
 ];
 

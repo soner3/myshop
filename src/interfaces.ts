@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { FieldError, UseFormRegister } from "react-hook-form";
+import { TshippingAddressSchema } from "./lib/schemas/shippingAddressSchema";
 
 export interface MenuItemType {
   id: string;
@@ -84,4 +86,20 @@ export interface Cart {
 
 export interface SearchState {
   search: string;
+}
+
+export interface InputComponentType {
+  labelValue: string;
+  inputType: string;
+  inputPlaceholder: string;
+  inputId: string;
+  error: FieldError | undefined | string;
+  errorMessage: string | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  register: UseFormRegister<any>;
+  registerSchema: string;
+}
+
+export interface CheckoutState {
+  information: TshippingAddressSchema;
 }

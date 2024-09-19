@@ -18,7 +18,7 @@ export default function CartInfo() {
         <p>Total</p>
         <p>{fixedTotalPrice}$</p>
       </div>
-      <Link href={"/checkout/"} className="w-full">
+      <Link href={"/checkout/information/"} className="w-full">
         <button className="mx-auto w-full rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 font-bold text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600">
           Checkout
         </button>

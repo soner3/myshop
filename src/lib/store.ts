@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import toggleReducer from "./features/toggleSlice";
 import cartReducer from "./features/cartSlice";
 import searchReducer from "./features/searchSlice";
+import checkoutReducer from "./features/checkoutSlice";
 
 export const makeStore = () => {
   return configureStore({
@@ -9,6 +10,7 @@ export const makeStore = () => {
       toggle: toggleReducer,
       cart: cartReducer,
       search: searchReducer,
+      checkout: checkoutReducer,
     },
   });
 };
