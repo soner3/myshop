@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
 import { TshippingAddressSchema } from "./lib/schemas/shippingAddressSchema";
+import { TshippingSchema } from "./lib/schemas/shippingSchema";
 
 export interface MenuItemType {
   id: string;
@@ -101,5 +102,6 @@ export interface InputComponentType {
 }
 
 export interface CheckoutState {
-  information: TshippingAddressSchema;
+  information: TshippingAddressSchema | null;
+  shipping: TshippingSchema | null;
 }

@@ -1,3 +1,4 @@
+import ShippingInformation from "@/components/checkout/ShippingInformation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,5 +6,9 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  return <div className="h-full w-full">Shipping page</div>;
+  return (
+    <>
+      <ShippingInformation />
+    </>
+  );
 }

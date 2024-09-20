@@ -1,7 +1,6 @@
 import * as z from "zod";
 
-const emailPhoneRegex = /^[A-Za-z0-9@+-_.]+/;
-const streetRegex = /^(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]+$/;
+const emailPhoneRegex = /^[A-Za-z0-9@+-_.]+$/;
 const zipCodeRegex = /^[0-9]+$/;
 
 export const shippingAddressSchema = z.object({
@@ -11,12 +10,12 @@ export const shippingAddressSchema = z.object({
       message:
         "this field can only contain letters (upper- and lowercase) numbers @ _ . + and _",
     })
-    .min(2, { message: "this field must be atleast 2 characters long" })
+    .min(8, { message: "this field must be atleast 8 characters long" })
     .max(70, { message: "this field cant be longer than 70 characters" }),
   country: z
     .string()
     .trim()
-    .min(4, { message: "your country must be atleast 4 characters long" })
+    .min(5, { message: "your country must be atleast 5 characters long" })
     .max(50, { message: "your country cant be longer than 50 characters" }),
   firstName: z
     .string()
@@ -30,10 +29,8 @@ export const shippingAddressSchema = z.object({
     .max(50, { message: "your last name cant be longer than 50 characters" }),
   street: z
     .string()
-    .regex(streetRegex, {
-      message: "this field must contain your street name and number",
-    })
-    .min(2, { message: "your street must be atleast 2 characters long" })
+    .trim()
+    .min(5, { message: "your street must be atleast 5 characters long" })
     .max(100, { message: "your street cant be longer than 100 characters" }),
   city: z
     .string()
@@ -43,7 +40,7 @@ export const shippingAddressSchema = z.object({
   zipCode: z
     .string()
     .regex(zipCodeRegex, { message: "your zip code can only contain numbers" })
-    .min(2, { message: "your city must be atleast 2 characters long" })
+    .min(5, { message: "your city must be atleast 5 characters long" })
     .max(50, { message: "your city cant be longer than 50 characters" }),
 });
 
