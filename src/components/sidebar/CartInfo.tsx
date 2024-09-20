@@ -1,10 +1,12 @@
 "use client";
 
-import { useAppSelector } from "@/lib/reduxHooks";
+import { toggleCartSidebar } from "@/lib/features/toggleSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import Link from "next/link";
 
 export default function CartInfo() {
   const cart = useAppSelector((store) => store.cart.cartItemList);
+  const dispatch = useAppDispatch();
 
   const totalPrice = cart.reduce((acc, curr) => {
     return acc + curr.totalPrice;
@@ -19,7 +21,10 @@ export default function CartInfo() {
         <p>{fixedTotalPrice}$</p>
       </div>
       <Link href={"/checkout/information/"} className="w-full">
-        <button className="mx-auto w-full rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 font-bold text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600">
+        <button
+          onClick={() => dispatch(toggleCartSidebar(false))}
+          className="mx-auto w-full rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 font-bold text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600"
+        >
           Checkout
         </button>
       </Link>

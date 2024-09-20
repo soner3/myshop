@@ -13,7 +13,7 @@ export default function CurrentInfo({
   changeLink: string;
 }) {
   return (
-    <li className="my-1 flex w-full items-center justify-between rounded-xl p-6 hover:border hover:border-sky-500 dark:hover:border-rose-600">
+    <li className="my-1 flex w-full items-center justify-between gap-5 rounded-xl p-6 hover:border hover:border-sky-500 dark:hover:border-rose-600">
       <p className="text-xl text-sky-500">{title}</p>
       <div>{children}</div>
       <Link

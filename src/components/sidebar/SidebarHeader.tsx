@@ -18,6 +18,7 @@ export default function SidebarHeader() {
       return;
     }
     router.push(`/products/search?searchInput=${search}`);
+    dispatch(toggleSidebar(false));
     dispatch(searchChange(""));
   }
 

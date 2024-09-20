@@ -17,7 +17,7 @@ export default function PaymentForm() {
   }
 
   return (
-    <form noValidate onSubmit={handlePayment}>
+    <form noValidate onSubmit={handlePayment} className="my-8">
       <div className="h-full w-full">
         <p className="text-2xl font-semibold text-sky-500">Payment</p>
         <p>All transactions are secure and encrypted</p>
