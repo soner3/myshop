@@ -10,7 +10,7 @@ import ProductRating from "../ProductRating";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <motion.div
+    <motion.li
       initial={{
         opacity: 0,
         y: 50,
@@ -40,6 +40,6 @@ export default function ProductCard({ product }: { product: Product }) {
         <ProductRating product={product} />
         <ProductCardBanner product={product} />
       </Link>
-    </motion.div>
+    </motion.li>
   );
 }
