@@ -11,6 +11,14 @@ export default function PaymentInformation() {
   const { information, shippingClass } = useAppSelector(
     (store) => store.checkout,
   );
+  const { cartItemList } = useAppSelector((store) => store.cart);
+
+  const totalCartPrice = cartItemList.reduce((acc, curr) => {
+    return acc + curr.totalPrice;
+  }, 0);
+  const shippingPrice = shippingClass?.shipping === "express" ? 7.99 : 5.99;
+
+  const totalPrice = (shippingPrice + totalCartPrice).toFixed(2);
 
   useEffect(() => {
     if (!information) {
@@ -36,6 +44,20 @@ export default function PaymentInformation() {
           <p className="capitalize">{shippingClass?.shipping}</p>
         </CurrentInfo>
       </ul>
+      <div className="my-4 flex flex-col items-center justify-center rounded-xl border p-4 shadow-xl dark:border-rose-600">
+        <div className="flex w-full items-center justify-between text-lg">
+          <p>Total Cart Price</p>
+          <p>{totalCartPrice}$</p>
+        </div>
+        <div className="flex w-full items-center justify-between text-lg">
+          <p>Shipping Price</p>
+          <p>{shippingPrice}$</p>
+        </div>
+        <div className="flex w-full items-center justify-between text-xl text-sky-500">
+          <p className="font-semibold">Total Price</p>
+          <p className="font-bold">{totalPrice}$</p>
+        </div>
+      </div>
       <PaymentForm />
     </div>
   );
