@@ -5,7 +5,7 @@ import { TshippingSchema } from "../schemas/shippingSchema";
 
 const initialState: CheckoutState = {
   information: null,
-  shipping: null,
+  shippingClass: null,
 };
 
 const checkout = createSlice({
@@ -16,10 +16,15 @@ const checkout = createSlice({
       state.information = action.payload;
     },
     addShippingClass: (state, action: PayloadAction<TshippingSchema>) => {
-      state.shipping = action.payload;
+      state.shippingClass = action.payload;
+    },
+    resetCheckout: (state) => {
+      state.information = null;
+      state.shippingClass = null;
     },
   },
 });
 
-export const { addInformation, addShippingClass } = checkout.actions;
+export const { addInformation, addShippingClass, resetCheckout } =
+  checkout.actions;
 export default checkout.reducer;

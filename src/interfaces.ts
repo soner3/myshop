@@ -103,5 +103,5 @@ export interface InputComponentType {
 
 export interface CheckoutState {
   information: TshippingAddressSchema | null;
-  shipping: TshippingSchema | null;
+  shippingClass: TshippingSchema | null;
 }

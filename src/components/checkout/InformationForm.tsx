@@ -11,6 +11,7 @@ import SubmitButton from "./SubmitButton";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { addInformation } from "@/lib/features/checkoutSlice";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function InformationForm() {
   const { information } = useAppSelector((store) => store.checkout);
@@ -34,8 +35,16 @@ export default function InformationForm() {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
+  useEffect(() => {
+    if (cart.length < 1) {
+      router.push("/products/search/all/");
+      return;
+    }
+  }, [cart.length, router]);
+
   function handleInformationSubmit(informationData: TshippingAddressSchema) {
     if (cart.length < 1) {
+      router.push("/products/search/all/");
       return;
     }
     dispatch(addInformation(informationData));

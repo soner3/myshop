@@ -2,19 +2,24 @@
 
 import { useAppSelector } from "@/lib/reduxHooks";
 import { useRouter } from "next/navigation";
-import ShippingForm from "./ShippingForm";
-import { useEffect } from "react";
 import CurrentInfo from "./CurrentInfo";
+import { useEffect } from "react";
+import PaymentForm from "./PaymentForm";
 
-export default function ShippingInformation() {
+export default function PaymentInformation() {
   const router = useRouter();
-  const { information } = useAppSelector((store) => store.checkout);
+  const { information, shippingClass } = useAppSelector(
+    (store) => store.checkout,
+  );
 
   useEffect(() => {
     if (!information) {
       router.push("/checkout/information/");
     }
-  }, [information, router]);
+    if (!shippingClass) {
+      router.push("/checkout/shipping/");
+    }
+  }, [information, router, shippingClass]);
 
   return (
     <div className="w-full p-4 md:w-3/4">
@@ -27,8 +32,11 @@ export default function ShippingInformation() {
             {information?.street}, {information?.zipCode} {information?.city}
           </p>
         </CurrentInfo>
+        <CurrentInfo title="Shipping" changeLink="/checkout/shipping/">
+          <p className="capitalize">{shippingClass?.shipping}</p>
+        </CurrentInfo>
       </ul>
-      <ShippingForm />
+      <PaymentForm />
     </div>
   );
 }

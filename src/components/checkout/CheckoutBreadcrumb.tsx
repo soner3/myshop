@@ -7,7 +7,9 @@ import { BsChevronRight } from "react-icons/bs";
 
 export default function CheckoutBreadcrumb() {
   const path = usePathname();
-  const { information, shipping } = useAppSelector((store) => store.checkout);
+  const { information, shippingClass } = useAppSelector(
+    (store) => store.checkout,
+  );
 
   return (
     <div className="m-4 mt-8 flex items-center gap-2 text-lg">
@@ -27,7 +29,7 @@ export default function CheckoutBreadcrumb() {
       <BsChevronRight />
       <Link
         href={"/checkout/payment/"}
-        className={`${path.includes("payment") && "font-semibold text-sky-500"} ${!information || !shipping ? "-z-10" : ""}`}
+        className={`${path.includes("payment") && "font-semibold text-sky-500"} ${!information || !shippingClass ? "-z-10" : ""}`}
       >
         Payment
       </Link>
