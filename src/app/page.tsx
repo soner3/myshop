@@ -19,12 +19,14 @@ export default function Home() {
       <section>
         <HotProductCard />
       </section>
-      <Link
-        href={"/products/search/all/"}
-        className="mx-auto my-4 flex w-1/2 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 p-2 px-8 text-2xl font-semibold text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600"
-      >
-        All Products
-      </Link>
+      <div className="my-4 flex w-full items-center justify-center">
+        <Link
+          href={"/products/search/all/"}
+          className="w-1/2 rounded-xl bg-gradient-to-br from-sky-500 to-violet-600 py-2 text-center text-2xl font-semibold text-white duration-200 hover:scale-105 active:scale-95 dark:from-violet-600 dark:to-rose-600"
+        >
+          All Products
+        </Link>
+      </div>
     </>
   );
 }
