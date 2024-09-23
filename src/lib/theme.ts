@@ -21,9 +21,14 @@ export function applyDarkMode() {
 }
 
 function getThemeCookie() {
-  const [cookieName, cookieValue] = document.cookie.split("=");
-  if (cookieName === "theme") {
-    return cookieValue;
+  const cookieArray = document.cookie.split("=");
+
+  const [cookieThemeValue] = cookieArray.filter((cookieItem) => {
+    return cookieItem === "light" || cookieItem === "dark";
+  });
+
+  if (cookieThemeValue) {
+    return cookieThemeValue;
   } else {
     return null;
   }
