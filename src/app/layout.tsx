@@ -14,6 +14,7 @@ import ApplyTheme from "@/ui/ApplyTheme";
 import LoadCart from "@/ui/LoadCart";
 import Toast from "@/ui/Toast";
 import Head from "next/head";
+import { usePathname } from "next/navigation";
 
 const roboto = Roboto({
   weight: "400",
@@ -36,10 +37,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const baseUrl = "https://www.sonerapp.net";
+
   return (
     <html lang="de">
       <Head>
         <meta name="HandheldFriendly" content="true" />
+        <link rel="canonical" href={`${baseUrl}${pathname}`} />
         <link rel="apple-touch-icon" href="./start-icon.png" />
       </Head>
       <body className={`${roboto.className} dark:bg-slate-900 dark:text-white`}>
