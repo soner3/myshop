@@ -24,6 +24,7 @@ export default function CategorySelection({
   function handleCategoryChange(category: string) {
     setCurrentCategory(category);
     router.replace(`/products/search/${category}/`);
+    router.refresh();
   }
 
   return (

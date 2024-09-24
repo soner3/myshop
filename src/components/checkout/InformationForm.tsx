@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { addInformation } from "@/lib/features/checkoutSlice";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 export default function InformationForm() {
   const { information } = useAppSelector((store) => store.checkout);
@@ -38,6 +39,7 @@ export default function InformationForm() {
   useEffect(() => {
     if (cart.length < 1) {
       router.push("/products/search/all/");
+      toast.info("Your Cart is Empty");
       return;
     }
   }, [cart.length, router]);

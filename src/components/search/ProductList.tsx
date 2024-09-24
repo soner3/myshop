@@ -83,28 +83,28 @@ export default function ProductList({
       <ul className="flex flex-wrap justify-center gap-8">
         {isAll ? (
           <>
-            {allProducts.map((product) => {
+            {allProducts.map((product, index) => {
               return (
                 <Link
                   className="rounded-xl border from-sky-500 via-violet-600 to-rose-600 shadow-xl duration-300 hover:scale-105 hover:border-rose-600 hover:bg-gradient-to-br dark:border-rose-600"
                   key={product.id}
                   href={`/products/${product.id}/`}
                 >
-                  <ProductListItem product={product} />
+                  <ProductListItem index={index} product={product} />
                 </Link>
               );
             })}
           </>
         ) : (
           <>
-            {products.map((product) => {
+            {products.map((product, index) => {
               return (
                 <Link
                   className="rounded-xl border from-sky-500 via-violet-600 to-rose-600 shadow-xl duration-300 hover:scale-105 hover:border-rose-600 hover:bg-gradient-to-br dark:border-rose-600"
                   key={product.id}
                   href={`/products/${product.id}/`}
                 >
-                  <ProductListItem product={product} />
+                  <ProductListItem product={product} index={index} />
                 </Link>
               );
             })}

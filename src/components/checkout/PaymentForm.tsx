@@ -6,6 +6,7 @@ import SubmitButton from "./SubmitButton";
 import { useAppDispatch } from "@/lib/reduxHooks";
 import { resetCheckout } from "@/lib/features/checkoutSlice";
 import { deleteCart } from "@/lib/features/cartSlice";
+import { toast } from "react-toastify";
 
 export default function PaymentForm() {
   const dispatch = useAppDispatch();
@@ -14,6 +15,9 @@ export default function PaymentForm() {
     event.preventDefault();
     dispatch(resetCheckout());
     dispatch(deleteCart());
+    toast.success(
+      "Payment Successfull! You will be redirected to the Product Page",
+    );
   }
 
   return (

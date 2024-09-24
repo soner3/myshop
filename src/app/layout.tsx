@@ -12,6 +12,7 @@ import CartOverlay from "@/ui/CartOverlay";
 import ImageZoomOverlay from "@/ui/ImageZoomOverlay";
 import ApplyTheme from "@/ui/ApplyTheme";
 import LoadCart from "@/ui/LoadCart";
+import Toast from "@/ui/Toast";
 
 const roboto = Roboto({
   weight: "400",
@@ -49,6 +50,7 @@ export default function RootLayout({
           <Footer />
           <LoadCart />
           <ApplyTheme />
+          <Toast />
         </StoreProvider>
       </body>
     </html>

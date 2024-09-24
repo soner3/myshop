@@ -1,8 +1,9 @@
 import { getProductByCategory, getProductList } from "@/data/productData";
-import React, { Suspense } from "react";
-import ProductList from "./ProductList";
+import React from "react";
 import { ProductData } from "@/interfaces";
-import PageLoadingSpinner from "@/ui/PageLoadingSpinner";
+import dynamic from "next/dynamic";
+
+const ProductList = dynamic(() => import("./ProductList"));
 
 export default async function ProductCategoryContainer({
   category,
@@ -36,14 +37,12 @@ export default async function ProductCategoryContainer({
 
   return (
     <>
-      <Suspense fallback={<PageLoadingSpinner />}>
-        <ProductList
-          products={productData.products}
-          count={productData.total}
-          limit={limit}
-          isAll={category === "all"}
-        />
-      </Suspense>
+      <ProductList
+        products={productData.products}
+        count={productData.total}
+        limit={limit}
+        isAll={category === "all"}
+      />
     </>
   );
 }

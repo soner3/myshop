@@ -7,7 +7,13 @@ import ProductCardBanner from "../ProductCardBanner";
 import { motion } from "framer-motion";
 import ProductRating from "../ProductRating";
 
-export default function ProductListItem({ product }: { product: Product }) {
+export default function ProductListItem({
+  product,
+  index,
+}: {
+  product: Product;
+  index: number;
+}) {
   return (
     <motion.li
       initial={{
@@ -28,9 +34,11 @@ export default function ProductListItem({ product }: { product: Product }) {
         src={product.images[0]}
         alt={product.title}
         fill
-        priority
+        quality={30}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-contain"
+        loading={index === 0 ? "eager" : "lazy"}
+        priority={index === 0}
       />
       <ProductCardBanner product={product} />
       <ProductRating product={product} />
