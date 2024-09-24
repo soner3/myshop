@@ -13,6 +13,7 @@ import ImageZoomOverlay from "@/ui/ImageZoomOverlay";
 import ApplyTheme from "@/ui/ApplyTheme";
 import LoadCart from "@/ui/LoadCart";
 import Toast from "@/ui/Toast";
+import Head from "next/head";
 
 const roboto = Roboto({
   weight: "400",
@@ -36,7 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className="scroll-smooth">
+    <html lang="de">
+      <Head>
+        <meta name="HandheldFriendly" content="true" />
+        <link rel="apple-touch-icon" href="./start-icon.png" />
+      </Head>
       <body className={`${roboto.className} dark:bg-slate-900 dark:text-white`}>
         <StoreProvider>
           <Header />
