@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s / Checkout",
+    template: "%s | Checkout",
     default: "Checkout",
   },
   description:
