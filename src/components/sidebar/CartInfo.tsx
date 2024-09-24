@@ -15,7 +15,7 @@ export default function CartInfo() {
   const fixedTotalPrice = totalPrice.toFixed(2);
 
   return (
-    <div className="m-auto mb-12 flex w-full flex-col items-center justify-center p-4 md:mb-auto">
+    <div className="mb-14 flex w-full flex-col items-center justify-center p-4 md:m-auto">
       <div className="flex w-full justify-between p-3 text-2xl font-semibold">
         <p>Total</p>
         <p>{fixedTotalPrice}$</p>
