@@ -44,7 +44,7 @@ export default function PaymentInformation() {
           <p className="capitalize">{shippingClass?.shipping}</p>
         </CurrentInfo>
       </ul>
-      <div className="my-4 flex flex-col items-center justify-center rounded-xl border p-4 shadow-xl dark:border-rose-600">
+      <div className="mb-4 mt-8 flex flex-col items-center justify-center rounded-xl border p-4 shadow-xl dark:border-rose-600">
         <div className="flex w-full items-center justify-between text-lg">
           <p>Total Cart Price</p>
           <p>{totalCartPrice}$</p>
