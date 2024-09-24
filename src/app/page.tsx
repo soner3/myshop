@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <h1 className="my-4 text-center text-3xl font-bold text-sky-500">
-        Welcome to ShopZilla!
+        Welcome to Shopnest!
       </h1>
       <p className="p-2 text-center text-xl font-bold">
         {/*Generiert von ChatGPT */}
