@@ -1,7 +1,8 @@
 import ProductCategoryContainer from "@/components/search/ProductCategoryContainer";
-import { getProductCategories } from "@/data/productData";
 import { Metadata } from "next";
 import React from "react";
+
+export const runtime = "edge";
 
 type Props = {
   params: { category: string };
@@ -13,19 +14,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const categories: Array<string> | null = await getProductCategories();
+// export async function generateStaticParams() {
+//   const categories: Array<string> | null = await getProductCategories();
 
-  if (!categories) {
-    return [];
-  }
+//   if (!categories) {
+//     return [];
+//   }
 
-  const categoryList: Array<string> = ["all", ...categories];
+//   const categoryList: Array<string> = ["all", ...categories];
 
-  return categoryList.map((listItem) => ({
-    category: listItem,
-  }));
-}
+//   return categoryList.map((listItem) => ({
+//     category: listItem,
+//   }));
+// }
 
 export default function Page({ params }: Props) {
   return (

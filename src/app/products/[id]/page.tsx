@@ -4,6 +4,8 @@ import { getProduct } from "@/data/productData";
 import { Product } from "@/interfaces";
 import { Metadata } from "next";
 
+export const runtime = "edge";
+
 type Props = {
   params: { id: string };
 };
