@@ -28,9 +28,7 @@ export default function ProductInfoCard({ product }: { product: Product }) {
           </tr>
           <tr className="border dark:border-rose-600">
             <td>weight</td>
-            <td className="border-l dark:border-rose-600">
-              {product.weight}kg
-            </td>
+            <td className="border-l dark:border-rose-600">{product.weight}</td>
           </tr>
           <tr className="border dark:border-rose-600">
             <td>dimensions</td>

@@ -14,20 +14,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// export async function generateStaticParams() {
-//   const categories: Array<string> | null = await getProductCategories();
-
-//   if (!categories) {
-//     return [];
-//   }
-
-//   const categoryList: Array<string> = ["all", ...categories];
-
-//   return categoryList.map((listItem) => ({
-//     category: listItem,
-//   }));
-// }
-
 export default function Page({ params }: Props) {
   return (
     <div className="flex w-full flex-col gap-5">
