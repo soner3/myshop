@@ -27,7 +27,10 @@ export default function CookieBanner() {
       <DialogContent className="dark:bg-slate-900">
         <p className="capitalize dark:text-white">
           If you are using this Website you have to agree with the fact that we
-          are using Cookies. We do not save personal data.
+          are using Cookies and use your Localstorage. This Cookie is used to
+          save the color theme that you can choose in the header. Furthermore is
+          your cart saved in your localstorage. The Reason for this is that your
+          cart should persist even after a reload.
         </p>
       </DialogContent>
       <DialogActions className="dark:bg-slate-900 dark:text-white">

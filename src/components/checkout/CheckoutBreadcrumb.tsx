@@ -12,7 +12,7 @@ export default function CheckoutBreadcrumb() {
   );
 
   return (
-    <div className="m-4 mt-8 flex items-center gap-2 text-lg">
+    <div className="mt-12 flex items-center gap-2 text-lg">
       <Link
         href={"/checkout/information/"}
         className={`${path.includes("information") && "-z-10 font-semibold"} ${path.includes("information") || path.includes("shipping") || path.includes("payment") ? "text-sky-500" : ""}`}

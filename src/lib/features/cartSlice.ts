@@ -1,5 +1,6 @@
 import { Cart, CartItem } from "@/interfaces";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState: Cart = {
   cartItemList: [],
@@ -15,9 +16,16 @@ const cartSlice = createSlice({
 
       state.cartItemList.forEach((item) => {
         if (item.product.id === newItem.product.id) {
-          item.quantity += newItem.quantity;
-          item.totalPrice += newItem.totalPrice;
           itemInCart = true;
+          const newQuantity = newItem.quantity + item.quantity;
+          if (newQuantity > newItem.product.stock) {
+            item.quantity = newItem.product.stock;
+            item.totalPrice = newItem.product.stock * newItem.product.price;
+            toast.info("You reached the maximum quantity for this product");
+          } else {
+            item.quantity += newItem.quantity;
+            item.totalPrice += newItem.totalPrice;
+          }
         }
       });
 
@@ -27,6 +35,7 @@ const cartSlice = createSlice({
       } else {
         state.cartItemList.push(newItem);
         localStorage.setItem("cart", JSON.stringify(state.cartItemList));
+        toast.success("Product added to cart");
       }
     },
     incraseQuantity: (state, action: PayloadAction<CartItem>) => {
@@ -34,8 +43,13 @@ const cartSlice = createSlice({
 
       state.cartItemList.forEach((item) => {
         if (item.product.id === newItem.product.id) {
-          item.quantity += 1;
-          item.totalPrice = item.quantity * item.product.price;
+          const newQuantity = item.quantity + 1;
+          if (newQuantity > newItem.product.stock) {
+            toast.info("You reached the maximum quantity for this product");
+          } else {
+            item.quantity += 1;
+            item.totalPrice = item.quantity * item.product.price;
+          }
         }
       });
       localStorage.setItem("cart", JSON.stringify(state.cartItemList));
@@ -58,6 +72,18 @@ const cartSlice = createSlice({
       });
       localStorage.setItem("cart", JSON.stringify(state.cartItemList));
     },
+    deleteCartItem: (state, action: PayloadAction<CartItem>) => {
+      const newItem = action.payload;
+
+      state.cartItemList.forEach((item) => {
+        if (item.product.id === newItem.product.id) {
+          const newCart = state.cartItemList.filter((oldCartItem) => {
+            return oldCartItem.product.id !== newItem.product.id;
+          });
+          state.cartItemList = newCart;
+        }
+      });
+    },
     deleteCart: (state) => {
       localStorage.removeItem("cart");
       state.cartItemList = [];
@@ -65,6 +91,11 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, incraseQuantity, decraseQuantity, deleteCart } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  incraseQuantity,
+  decraseQuantity,
+  deleteCart,
+  deleteCartItem,
+} = cartSlice.actions;
 export default cartSlice.reducer;
