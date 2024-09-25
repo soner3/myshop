@@ -13,6 +13,7 @@ import ImageZoomOverlay from "@/ui/ImageZoomOverlay";
 import ApplyTheme from "@/ui/ApplyTheme";
 import LoadCart from "@/ui/LoadCart";
 import Toast from "@/ui/Toast";
+import SidebarOverlay from "@/ui/SidebarOverlay";
 
 const roboto = Roboto({
   weight: "400",
@@ -48,6 +49,7 @@ export default function RootLayout({
           <IconSidebar />
           <main className="duration-200 md:ml-20">{children}</main>
           <CartOverlay />
+          <SidebarOverlay />
           <ImageZoomOverlay />
           <Footer />
           <LoadCart />
