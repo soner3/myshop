@@ -12,12 +12,10 @@ export default function PaymentInformation() {
     (store) => store.checkout,
   );
   const { cartItemList } = useAppSelector((store) => store.cart);
-
   const totalCartPrice = cartItemList.reduce((acc, curr) => {
     return acc + curr.totalPrice;
   }, 0);
   const shippingPrice = shippingClass?.shipping === "express" ? 7.99 : 5.99;
-
   const totalPrice = (shippingPrice + totalCartPrice).toFixed(2);
 
   useEffect(() => {
@@ -47,7 +45,7 @@ export default function PaymentInformation() {
       <div className="mb-4 mt-8 flex flex-col items-center justify-center rounded-xl border p-4 shadow-xl dark:border-rose-600">
         <div className="flex w-full items-center justify-between text-lg">
           <p>Total Cart Price</p>
-          <p>{totalCartPrice}$</p>
+          <p>{totalCartPrice.toFixed(2)}$</p>
         </div>
         <div className="flex w-full items-center justify-between text-lg">
           <p>Shipping Price</p>
