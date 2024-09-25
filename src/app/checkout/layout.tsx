@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: "Checkout",
   },
   description:
-    "Complete your purchase securely with our easy checkout process. Review your items and finalize your order quickly.",
+    "Complete your purchase securely with our streamlined checkout process. Review your items, enter payment details, and finalize your order quickly and easily.",
 };
 
 export default function layout({ children }: { children: ReactNode }) {
