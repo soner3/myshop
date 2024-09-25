@@ -35,7 +35,6 @@ const cartSlice = createSlice({
       } else {
         state.cartItemList.push(newItem);
         localStorage.setItem("cart", JSON.stringify(state.cartItemList));
-        toast.success("Product added to cart");
       }
     },
     incraseQuantity: (state, action: PayloadAction<CartItem>) => {
