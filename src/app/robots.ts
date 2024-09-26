@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
 
-    sitemap: "https://www.sonerapp.net/sitemap.xml",
+    sitemap: "https://sonerapp.net/sitemap.xml",
   };
 }
