@@ -24,9 +24,8 @@ export default function ContactForm() {
   });
 
   async function handleContactSubmit(data: TcontactSchema) {
-    const isSuccessfull = await sendMessage(data);
-
-    if (isSuccessfull) {
+    const statusCode = await sendMessage(data);
+    if (statusCode === 0) {
       toast.success("Message sended");
     } else {
       toast.error("An error occurred while sending the message");

@@ -4,7 +4,7 @@ const webHookUrl: string = "";
 
 export async function sendMessage(
   messageData: TcontactSchema,
-): Promise<boolean | null> {
+): Promise<number | null> {
   try {
     const jsonData = JSON.stringify(messageData);
     const res = await fetch(webHookUrl, {
@@ -16,7 +16,7 @@ export async function sendMessage(
       body: jsonData,
     });
 
-    return res.ok;
+    return res.status;
   } catch (error) {
     return null;
   }
