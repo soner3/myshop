@@ -18,7 +18,7 @@ export default function InputComponent({
         htmlFor={inputId}
         className={`my-2 font-semibold duration-200 ${error && "text-red-500"}`}
       >
-        {labelValue}
+        {labelValue} *
       </label>
       <input
         type={inputType}
