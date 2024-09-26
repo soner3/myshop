@@ -1,7 +1,12 @@
 "use client";
 
 import { MenuItemType } from "@/interfaces";
-import { BsBagPlus, BsCashCoin, BsHouseDoor } from "react-icons/bs";
+import {
+  BsBagPlus,
+  BsCashCoin,
+  BsHouseDoor,
+  BsInfoCircle,
+} from "react-icons/bs";
 import MenuItem from "./MenuItem";
 import { motion } from "framer-motion";
 import { useAppSelector } from "@/lib/reduxHooks";
@@ -24,6 +29,12 @@ const menuItems: MenuItemType[] = [
     href: "/checkout/information/",
     text: "Checkout",
     icon: <BsCashCoin className="mb-1 size-5" />,
+  },
+  {
+    id: "4",
+    href: "/contact/",
+    text: "Contact",
+    icon: <BsInfoCircle className="mb-1 size-5" />,
   },
 ];
 

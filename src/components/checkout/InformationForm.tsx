@@ -7,7 +7,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import InputComponent from "./InputComponent";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../SubmitButton";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { addInformation } from "@/lib/features/checkoutSlice";
 import { useRouter } from "next/navigation";

@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { shippingSchema, TshippingSchema } from "@/lib/schemas/shippingSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../SubmitButton";
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { addShippingClass } from "@/lib/features/checkoutSlice";

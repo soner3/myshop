@@ -2,7 +2,7 @@
 
 import { FormEvent } from "react";
 import NoPaymentBanner from "./NoPaymentBanner";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../SubmitButton";
 import { useAppDispatch } from "@/lib/reduxHooks";
 import { resetCheckout } from "@/lib/features/checkoutSlice";
 import { deleteCart } from "@/lib/features/cartSlice";
