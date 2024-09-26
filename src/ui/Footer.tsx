@@ -23,6 +23,16 @@ export default function Footer() {
   return (
     <footer className="duration-200 md:ml-20">
       <hr className="dark:border-rose-600" />
+      <p className="m-2 text-center">
+        All data is sourced from{" "}
+        <Link
+          className="hover:text-sky-500 hover:underline"
+          href={"https://dummyjson.com/"}
+        >
+          dummyjson.com
+        </Link>{" "}
+        and has been and will not be used for commercial purposes.
+      </p>
       <div className="my-4 flex justify-between p-4">
         <ul className="flex flex-col gap-2">
           <li>&copy;Soner Astan</li>

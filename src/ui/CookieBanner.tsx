@@ -30,7 +30,8 @@ export default function CookieBanner() {
           are using Cookies and use your Localstorage. This Cookie is used to
           save the color theme that you can choose in the header. Furthermore is
           your cart saved in your localstorage. The Reason for this is that your
-          cart should persist even after a reload.
+          cart should persist even after a reload. The Message that you can send
+          at the contact page will be send to nowhere and no data is saved.
         </p>
       </DialogContent>
       <DialogActions className="dark:bg-slate-900 dark:text-white">

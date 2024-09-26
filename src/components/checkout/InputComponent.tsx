@@ -21,6 +21,7 @@ export default function InputComponent({
         {labelValue} *
       </label>
       <input
+        required
         type={inputType}
         id={inputId}
         {...register(registerSchema)}
