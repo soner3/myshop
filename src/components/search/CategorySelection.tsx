@@ -23,8 +23,7 @@ export default function CategorySelection({
 
   function handleCategoryChange(category: string) {
     setCurrentCategory(category);
-    router.replace(`/products/search/${category}/`);
-    router.refresh();
+    router.push(`/products/search/${category}/`);
   }
 
   return (
