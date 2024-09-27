@@ -21,6 +21,12 @@ export default function CategorySelection({
     return;
   }, [path]);
 
+  useEffect(() => {
+    categories.forEach((category) => {
+      router.prefetch(`/products/search/${category}/`);
+    });
+  }, [categories, router]);
+
   function handleCategoryChange(category: string) {
     setCurrentCategory(category);
     router.replace(`/products/search/${category}/`);
