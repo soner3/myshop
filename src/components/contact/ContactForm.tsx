@@ -34,6 +34,7 @@ export default function ContactForm() {
 
   return (
     <form
+      noValidate
       onSubmit={handleSubmit(handleContactSubmit)}
       className="m-4 grid w-full grid-cols-1 p-2 md:grid-cols-2"
     >

@@ -55,6 +55,7 @@ export default function InformationForm() {
 
   return (
     <form
+      noValidate
       onSubmit={handleSubmit(handleInformationSubmit)}
       className="relative flex w-full flex-col md:w-3/4"
     >
