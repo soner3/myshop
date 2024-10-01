@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   BsBagPlus,
   BsCashCoin,
+  BsEnvelopeExclamation,
   BsHouseDoor,
   BsInfoCircle,
 } from "react-icons/bs";
@@ -30,6 +31,11 @@ const menuItems: IconListItemType[] = [
   {
     id: "4",
     href: "/contact/",
+    icon: <BsEnvelopeExclamation className="size-7" />,
+  },
+  {
+    id: "5",
+    href: "/imprint/",
     icon: <BsInfoCircle className="size-7" />,
   },
 ];

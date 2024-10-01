@@ -4,6 +4,7 @@ import { MenuItemType } from "@/interfaces";
 import {
   BsBagPlus,
   BsCashCoin,
+  BsEnvelopeExclamation,
   BsHouseDoor,
   BsInfoCircle,
 } from "react-icons/bs";
@@ -34,6 +35,12 @@ const menuItems: MenuItemType[] = [
     id: "4",
     href: "/contact/",
     text: "Contact",
+    icon: <BsEnvelopeExclamation className="mb-1 size-5" />,
+  },
+  {
+    id: "5",
+    href: "/imprint/",
+    text: "Imprint",
     icon: <BsInfoCircle className="mb-1 size-5" />,
   },
 ];
