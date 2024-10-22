@@ -8,6 +8,10 @@ import { getProductList } from "@/data/productData";
 import Pagination from "./Pagination";
 import { useSearchParams } from "next/navigation";
 
+/**
+ * Hier findet die gesamte Logik statt damit die Sortierungen angewendet werden.
+ * Sowohl für die Pagination, die Such Page als auch die Kategorien
+ */
 export default function ProductList({
   products,
   limit,

@@ -8,6 +8,10 @@ const initialState: CheckoutState = {
   shippingClass: null,
 };
 
+/**
+ * Der Checkout slice speichert die informationen von
+ * den checkout Formularen
+ */
 const checkout = createSlice({
   name: "checkout",
   initialState: initialState,

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Explore a wide range of products at MyShop. From electronics to fashion and home goods, find everything you need online with secure and convenient shopping.",
 };
 
+// Search and Category Page Layout
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <section className="flex w-full flex-col items-center justify-center p-8">

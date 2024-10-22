@@ -4,7 +4,7 @@ import { useAppSelector } from "@/lib/reduxHooks";
 import React, { ReactNode, useState } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 
-export default function ImageZoomCarousel({ images }: { images: ReactNode[] }) {
+export default function ImageZoom({ images }: { images: ReactNode[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isImageFocusOn = useAppSelector((store) => store.toggle.isImageFocus);
   const imageLength = images.length;

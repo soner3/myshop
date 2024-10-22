@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Shipping",
 };
 
+// Shipping Information Page
 export default function page() {
   return (
     <>

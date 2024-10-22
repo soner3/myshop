@@ -1,25 +1,71 @@
 # ShopZilla
 
-An Online Shop as a final coding project for my course
+Ein Online-Shop als Abschlussprojekt meines Kurses
 
-## Start the Project
+## Projekt starten
 
-To start the project you have to run the following commands in the Terminal
+Um das Projekt zu starten, musst du folgende Befehle im Terminal ausführen:
 
-1. npm install
-2. npm run build
-3. npm run start
+1. `npm install`
+2. `npm run build`
+3. `npm run start`
 
-Error Handling:
+### Alternative
 
-1. Make sure you are in the correct folder in your Terminal. The path should have shopzilla in the end ---> "..../shopzilla"
-2. Make sure you have node.js installed on your device:
-   2.1 this means you should be able to run "node -v" and "npm -v" in your terminal
+Als Alternative kann man die Anwendung auch mit Docker starten.
 
-## Application Error
+Falls Sie Makefile Befehle ausführen können tuen sie folgendes im Terminal:
 
-If your Internet Connection is bad you get an error like this:
-"TypeError: fetch failed
+1. `make build`
+2. `make run`
+
+Wenn Sie Makefile Befehle nicht ausführen können tuen sie bitte folgendes im Terminal:
+
+1. `docker build -t myshop .`
+2. `docker run --rm -p 3000:3000 myshop`
+
+Fehlerbehandlung:
+
+1. Stelle sicher, dass du dich im richtigen Ordner im Terminal befindest. Der Pfad sollte mit `shopzilla` enden ---> „..../shopzilla“
+2. Stelle sicher, dass Node.js auf deinem Gerät installiert ist:
+   2.1. Das bedeutet, dass du in deinem Terminal die Befehle `node -v` und `npm -v` ausführen kannst.
+
+## Application
+
+Der Quellcode der gesamten Application ist im 'src' Ordner.
+
+Der Ordner besteht aus folgenden Ordnern und einer Datei
+
+1. app
+2. components
+3. data
+4. lib
+5. ui
+6. interfaces.ts
+
+### app
+
+Das ist der Ordner der die ganze Anwendung enthält. Alle anderen Ordner und die Interface.ts Datei enthalten Komponenten, Typen oder Methoden, die in dem Ordner verwendet werden.
+Alle Seiten enthalten eine page.tsx Datei in der wird die Seite geschreiben und die Komponenten von den anderen Ordnern importiert. Der App Ordner hat und einige andere Ordner haben eine layout.tsx in der das Layout für den Teil der Seite vorgegeben wird.
+
+Mehr Informationen zum App Router von Next.js finden sie unter: https://nextjs.org/docs/app/building-your-application/routing
+
+Sämtliche Bilder und andere Datei Namen sind File Conventions die von Next.js erkannt werden. Außnahme ist hierbei StoreProvider.tsx die für Redux ist.
+
+Mehr Informationen im Doc: https://nextjs.org/docs/getting-started/project-structure#metadata-file-conventions
+
+### Dokumentation
+
+Demnach ist die Dokumentation für das Projekt in den Page.tsx, Layout.tsx und der StoreProvider.tsx Datei im App Ordner und seinen unter Ordnern.
+
+Nicht selbsterklärende Komponenten sind auch dokumentiert.
+
+## Anwendungsfehler
+
+Wenn Ihre Internetverbindung schlecht ist, erhalten Sie einen Fehler wie diesen:
+
+```
+TypeError: fetch failed
 at node:internal/deps/undici/undici:12502:13
 at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 at async fetchExternalImage (/home/soner/Web-Project/shopzilla/node_modules/next/dist/server/image-optimizer.js:582:17)
@@ -30,15 +76,16 @@ at async /home/soner/Web-Project/shopzilla/node_modules/next/dist/lib/batcher.js
 [cause]: ConnectTimeoutError: Connect Timeout Error
 at onConnectTimeout (node:internal/deps/undici/undici:6635:28)
 at node:internal/deps/undici/undici:6587:50
-at Immediate.\_onImmediate (node:internal/deps/undici/undici:6619:13)
+at Immediate._onImmediate (node:internal/deps/undici/undici:6619:13)
 at process.processImmediate (node:internal/timers:478:21)
 at process.callbackTrampoline (node:internal/async_hooks:130:17) {
 code: 'UND_ERR_CONNECT_TIMEOUT'
-}"
+}
+```
 
-This means that the request took to much time. This error is most likely to occure at the images. If an image is not loading it means that the request needed to much time to process due to your internet connection.
+Das bedeutet, dass die Anfrage zu viel Zeit in Anspruch genommen hat. Dieser Fehler tritt bei den Bildern auf. Wenn die request zu lange braucht erhält man einen Timeout error. Infolgedessen erhält man das angefragte Bild nicht. Überprüfen sie deshalb ihre Internetverbindung.
 
-## Data
+## Daten
 
-All Data including images comes from "https://dummyjson.com/docs/products".
-INFO: Some Images have a low quality or are outside of the box
+Alle Daten, einschließlich der Bilder, stammen von „https://dummyjson.com/docs/products“.
+INFO: Einige Bilder haben eine niedrige Qualität oder sind außerhalb des Rahmens.

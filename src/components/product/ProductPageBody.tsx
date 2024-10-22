@@ -2,11 +2,16 @@ import { Product } from "@/interfaces";
 import React from "react";
 import ImageCarousel from "./ImageCarousel";
 import PriceContainer from "./PriceContainer";
-import ImageZoomCarousel from "./ImageZoomCarousel";
 import Image from "next/image";
 import ProductInfoCard from "./ProductInfoCard";
+import ImageZoom from "./ImageZoom";
 
 export default function ProductPageBody({ product }: { product: Product }) {
+  /**
+   * Weil mehrere Bilder auf der Seite sind und die Seite von den Bildern Abhängig ist,
+   * werden die images in einem Array gespeichert welchen das allererste Bild priorisiert, sodass dieses
+   * schnell geladen wird.
+   */
   const imageArray = product.images.map((image, index) => {
     return (
       <Image
@@ -25,7 +30,7 @@ export default function ProductPageBody({ product }: { product: Product }) {
   return (
     <div className="mt-8 flex flex-col">
       <ImageCarousel images={imageArray} />
-      <ImageZoomCarousel images={imageArray} />
+      <ImageZoom images={imageArray} />
       <PriceContainer product={product} />
       <ProductInfoCard product={product} />
     </div>

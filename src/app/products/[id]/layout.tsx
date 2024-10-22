@@ -6,6 +6,7 @@ export const metadata: Metadata = {
     "Explore a wide range of products at MyShop. From electronics to fashion and home goods, find everything you need online with secure and convenient shopping.",
 };
 
+// Product Page Layout
 export default function Layout({ children }: { children: ReactNode }) {
   return <section>{children}</section>;
 }

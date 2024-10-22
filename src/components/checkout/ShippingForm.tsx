@@ -10,6 +10,7 @@ import { addShippingClass } from "@/lib/features/checkoutSlice";
 
 export default function ShippingForm() {
   const { shippingClass } = useAppSelector((store) => store.checkout);
+  // Schema der form und Status bearbeitung
   const {
     register,
     handleSubmit,

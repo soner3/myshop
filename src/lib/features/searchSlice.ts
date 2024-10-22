@@ -5,6 +5,11 @@ const initialState: SearchState = {
   search: "",
 };
 
+/**
+ * Speichert die aktuellen ziechen im Formularfeld
+ *
+ */
+
 const searchSlice = createSlice({
   name: "search",
   initialState: initialState,

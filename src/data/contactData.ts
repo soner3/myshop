@@ -1,5 +1,6 @@
 import { TcontactSchema } from "@/lib/schemas/contactSchema";
 
+//Fügen sie hier ihre WebHook.site Url ein
 const webHookUrl: string = "";
 
 export async function sendMessage(

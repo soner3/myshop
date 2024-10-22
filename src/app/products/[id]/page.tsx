@@ -10,6 +10,7 @@ type Props = {
   params: { id: string };
 };
 
+// name convention von Next.js für dynamische Metadaten
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
   const product: Product | null = await getProduct(id);
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+// Product Page
 export default async function page({ params }: Props) {
   const product: Product | null = await getProduct(params.id);
 
@@ -34,7 +36,7 @@ export default async function page({ params }: Props) {
           This Product Does not exist
         </h2>
         <p className="text-xl font-bold capitalize">
-          Please search for a product at the Product Page
+          Please search for a product at the Products Page
         </p>
       </div>
     );

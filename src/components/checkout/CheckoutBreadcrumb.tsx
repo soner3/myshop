@@ -5,12 +5,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BsChevronRight } from "react-icons/bs";
 
+// Breeadcrumbs, um über das Checkout zu Navigieren
 export default function CheckoutBreadcrumb() {
   const path = usePathname();
+  // checkout informationen aus dem redux Store holen
   const { information, shippingClass } = useAppSelector(
     (store) => store.checkout,
   );
 
+  // entsprechende Breadcrumbs aktiv schalten sobald das Formular bereits ausgefüllt wurde
   return (
     <div className="mt-12 flex items-center gap-2 text-lg">
       <Link

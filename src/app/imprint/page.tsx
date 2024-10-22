@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Learn more about the legal information and responsibilities of our website in the imprint section.",
 };
 
+// Impressum Page
 export default function page() {
   return (
     <section className="p-8">

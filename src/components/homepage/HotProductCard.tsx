@@ -8,6 +8,16 @@ import ProductCardBanner from "../ProductCardBanner";
 import { motion } from "framer-motion";
 import ProductRating from "../ProductRating";
 
+/**
+ * Hier wird das Produkt mit einer animation angezeigt, die
+ * bei jedem rendern auftritt.
+ * Das Image-tag ist von Next.js und führt Bildoptimierungen durch.
+ * Dazu gehört, dass die Qualität verbessert wird, es schnell gerendert wird und
+ * die Ladezeit der Seite nicht stark beeinflusst.
+ * Weil die Bilder für den Content der Hauptseite von hohem Wert sind
+ * haben sie das priority Attribut erhalten, sodass das Bild preloaded und gecached wird.
+ */
+
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <motion.li
@@ -38,6 +48,7 @@ export default function ProductCard({ product }: { product: Product }) {
           priority
         />
         <ProductRating product={product} />
+        {/** Produkt Titel und Preis */}
         <ProductCardBanner product={product} />
       </Link>
     </motion.li>

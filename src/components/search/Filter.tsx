@@ -3,6 +3,7 @@ import React from "react";
 import CategorySelection from "./CategorySelection";
 import SortSelection from "./SortSelection";
 
+// Auswahlfelder für die Kategorie und Sortierung der Produkte
 export default async function Filter() {
   const categoryList = await getProductCategories();
 

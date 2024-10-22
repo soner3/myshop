@@ -2,6 +2,7 @@ import { Product } from "@/interfaces";
 import { Rating } from "@mui/material";
 import React from "react";
 
+// Produktinformationen
 export default function ProductInfoCard({ product }: { product: Product }) {
   return (
     <div className="mt-8 grid grid-cols-1 gap-5 rounded-xl border p-8 shadow-xl md:grid-cols-2 dark:border-rose-600">

@@ -3,6 +3,8 @@ import { FieldError, UseFormRegister } from "react-hook-form";
 import { TshippingAddressSchema } from "./lib/schemas/shippingAddressSchema";
 import { TshippingSchema } from "./lib/schemas/shippingSchema";
 
+// Alle Typen der Anwendung
+
 export interface MenuItemType {
   id: string;
   href: string;

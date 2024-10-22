@@ -15,6 +15,14 @@ import LoadCart from "@/ui/LoadCart";
 import Toast from "@/ui/Toast";
 import SidebarOverlay from "@/ui/SidebarOverlay";
 
+/**
+ * Das ist das Grundlayout für das gesamte HTML Dokument. Somit auch alle Unterseiten für die
+ * gesamte Website. Jede Komponente im body-tag ist in jeder Unterseite vorhanden.
+ * Da der Redux Store für die gesamte Anwendung gilt muss er um alle Komponenten gesetzt werden.
+ *
+ *
+ */
+
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
@@ -45,6 +53,9 @@ export default function RootLayout({
           <CartSidebar />
           <IconSidebar />
           <main className="duration-200 md:ml-20">{children}</main>
+          {/**
+           * Background Overlay für die entsprechenden Komponenten
+           */}
           <CartOverlay />
           <SidebarOverlay />
           <ImageZoomOverlay />

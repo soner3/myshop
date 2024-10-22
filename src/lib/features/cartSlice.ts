@@ -6,6 +6,10 @@ const initialState: Cart = {
   cartItemList: [],
 };
 
+/**
+ * Der Cart Slice speichert den Einkaufswagen und beinhaltet die operationen,
+ * um Waren hinzuzufügen zu löschen und zu aktualisieren
+ */
 const cartSlice = createSlice({
   name: "cart",
   initialState: initialState,

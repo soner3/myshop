@@ -2,6 +2,7 @@ import ProductCategoryContainer from "@/components/search/ProductCategoryContain
 import { Metadata } from "next";
 import React from "react";
 
+// hat für die anwendung selbst keine relevanz sondern nur für das hosting über cloudflare
 export const runtime = "edge";
 
 type Props = {
@@ -14,6 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Product Category Page
 export default function Page({ params }: Props) {
   return (
     <div className="flex w-full flex-col gap-5">

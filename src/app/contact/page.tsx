@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Reach out to us for any questions, suggestions, or support. Our team is ready to assist you quickly and effectively. We look forward to hearing from you!",
 };
 
+// Contact Page
 export default function page() {
   return (
     <section>

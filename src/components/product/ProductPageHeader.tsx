@@ -10,6 +10,7 @@ export default function ProductPageHeader({ product }: { product: Product }) {
 
         <div className="flex items-center justify-center gap-2">
           <p className="font-medium">{product.rating}</p>
+          {/**Komponente von Material UI */}
           <Rating
             name="read-only"
             value={product.rating}

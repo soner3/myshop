@@ -1,10 +1,12 @@
 import { getProductByCategory, getProductList } from "@/data/productData";
 import React from "react";
 import { ProductData } from "@/interfaces";
-import dynamic from "next/dynamic";
+import ProductList from "./ProductList";
 
-const ProductList = dynamic(() => import("./ProductList"));
-
+/**
+ * befindet man sich auf der Search Page wird der Such werden die Produktdaten das Ergebnis
+ * der Produktsuche ansonsten werden die Produkte nach Filter angezeigt
+ */
 export default async function ProductCategoryContainer({
   category,
   searchProductData,

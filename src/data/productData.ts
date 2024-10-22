@@ -1,5 +1,7 @@
 import { Product, ProductData } from "@/interfaces";
 
+// Fetch requests an die Api
+
 export async function getProductCategories(): Promise<Array<string> | null> {
   try {
     const res = await fetch("https://dummyjson.com/products/category-list");

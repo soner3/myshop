@@ -13,6 +13,8 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
+// Such Page
+// sucht mit dem suchstring das Produkt über die API und zeigt es an
 export default async function Page({ searchParams }: Props) {
   const searchInput = searchParams["searchInput"] as string | undefined;
   let searchProductData = null;

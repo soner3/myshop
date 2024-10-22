@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Payment",
 };
 
+// Payment Information Page
 export default function page() {
   return (
     <>

@@ -1,6 +1,14 @@
 import HotProductCard from "@/components/homepage/HotProducts";
 import Link from "next/link";
 
+/**
+ * - Homepage
+ * Das Link-tag ist von Next.js und funktioniert wie ein a-tag
+ * der unterschied ist, dass hier die nächste seite prefetcht wird und
+ * die nächste seite an den Pfad angehängt wird und nicht die URL ersetzt.
+ * Daas ist besser für die performence
+ */
+
 export default function Home() {
   return (
     <>

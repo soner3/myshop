@@ -16,6 +16,7 @@ import { toast } from "react-toastify";
 
 export default function InformationForm() {
   const { information } = useAppSelector((store) => store.checkout);
+  // Form hook bekommt das Zod validierungsschema
   const {
     register,
     handleSubmit,

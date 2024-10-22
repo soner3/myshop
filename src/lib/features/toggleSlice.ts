@@ -7,6 +7,10 @@ const initialState: ToggleState = {
   isImageFocus: false,
 };
 
+/**
+ * Logik zum Öffnen und schließen der Sidebars und des Image Zooms
+ */
+
 const toggleSlice = createSlice({
   name: "sidebar",
   initialState: initialState,

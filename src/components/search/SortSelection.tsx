@@ -3,6 +3,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
+// Enthält die Logik zur Verwaltung der Filter über die Such und Kategorie Page
 export default function SortSelection() {
   const searchParams = useSearchParams();
   const sort = searchParams.get("sort");
