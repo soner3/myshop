@@ -37,6 +37,7 @@ export default function InformationForm() {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
+  // Wenn der einkaufswagen leer ist wird man in die All Products Page weitergeleitet
   useEffect(() => {
     if (cart.length < 1) {
       router.push("/products/search/all/");
