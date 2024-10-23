@@ -1,3 +1,4 @@
+// Funktionen um den Dark und White mode zu implementieren
 export function applyTheme() {
   if (
     getThemeCookie() === "dark" ||

@@ -3,6 +3,7 @@
 import { useParams, usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
+// Umleiten zur Seite mit der entsprechenden Kategorie, damit die Produkte Serverseitig gefetcht werden
 export default function CategorySelection({
   categories,
 }: {
@@ -22,6 +23,7 @@ export default function CategorySelection({
   }, [path]);
 
   useEffect(() => {
+    // Prefetchen der Category Pages ohne Filter, zur besseren Ladezeit
     categories.forEach((category) => {
       router.prefetch(`/products/search/${category}/`);
     });

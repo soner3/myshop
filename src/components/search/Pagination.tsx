@@ -1,5 +1,6 @@
 "use client";
 
+// React Icon Bibliothek
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 export default function Pagination({

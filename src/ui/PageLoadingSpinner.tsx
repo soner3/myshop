@@ -1,5 +1,6 @@
 import { CircularProgress } from "@mui/material";
 
+// Loading Spinner von Material-UI (Wurde auf mein Styling angepasst)
 export default function PageLoadingSpinner() {
   return (
     <section className="flex h-screen items-center justify-center">

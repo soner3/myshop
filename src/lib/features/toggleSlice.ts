@@ -8,7 +8,7 @@ const initialState: ToggleState = {
 };
 
 /**
- * Logik zum Öffnen und schließen der Sidebars und des Image Zooms
+ * Logik zum öffnen und schließen der Sidebars und des Image Zooms
  */
 
 const toggleSlice = createSlice({

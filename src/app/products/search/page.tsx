@@ -13,7 +13,16 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// Such Page
+/**
+ * Such Page
+ *
+ * Auf der Seite und seiner dynamischen Unterseite findet die komplexeste Logik der
+ * Anwendung statt.
+ *
+ * Zur Wiederverwendbarkeit der ProductCategoryContainer Komponente Verwendet jede Seite
+ * ab der Search Page den Container und gibt ihm die entsprechenden Produkt Daten von der API
+ */
+
 // sucht mit dem suchstring das Produkt über die API und zeigt es an
 export default async function Page({ searchParams }: Props) {
   const searchInput = searchParams["searchInput"] as string | undefined;

@@ -11,6 +11,8 @@ import { useSearchParams } from "next/navigation";
 /**
  * Hier findet die gesamte Logik statt damit die Sortierungen angewendet werden.
  * Sowohl für die Pagination, die Such Page als auch die Kategorien
+ *
+ * Die ensprechenden Parameter stehen in der URL
  */
 export default function ProductList({
   products,

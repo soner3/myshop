@@ -20,6 +20,7 @@ export default function SortSelection() {
     }
   }, [path, router, sorting]);
 
+  // die query Parameter werden zur URL hinzugefügt
   function handleSortChange(value: string) {
     setSorting(value);
     if (value === "none") {

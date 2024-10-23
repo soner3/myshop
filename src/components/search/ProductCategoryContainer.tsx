@@ -4,8 +4,9 @@ import { ProductData } from "@/interfaces";
 import ProductList from "./ProductList";
 
 /**
- * befindet man sich auf der Search Page wird der Such werden die Produktdaten das Ergebnis
- * der Produktsuche ansonsten werden die Produkte nach Filter angezeigt
+ * befindet man sich auf der Search Page wird das Ergebnis
+ * der Produktsuche als Produkt Daten verwendet ansonsten werden die Produkte der
+ * Category Page verwendet
  */
 export default async function ProductCategoryContainer({
   category,
@@ -23,10 +24,8 @@ export default async function ProductCategoryContainer({
 
   if (category === "all") {
     productData = await getProductList(limit, skip);
-  } else {
-    if (category) {
-      productData = await getProductByCategory(category);
-    }
+  } else if (category) {
+    productData = await getProductByCategory(category);
   }
 
   if (!productData) {

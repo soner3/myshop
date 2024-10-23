@@ -3,6 +3,7 @@ import * as z from "zod";
 const emailPhoneRegex = /^[A-Za-z0-9@+-_.]+$/;
 const zipCodeRegex = /^[0-9]+$/;
 
+// Zod Schema für das shipping-address Formular
 export const shippingAddressSchema = z.object({
   emailOrPhone: z
     .string()

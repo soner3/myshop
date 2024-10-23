@@ -3,6 +3,7 @@ import * as z from "zod";
 // Dieser Regex ist von Stackoverflow
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+// Zod Schema für das Kotakt Formular
 export const contactSchema = z.object({
   email: z
     .string()
