@@ -31,6 +31,8 @@ export default async function Page({ searchParams }: Props) {
   if (searchInput) {
     searchProductData = await searchProduct(searchInput);
   } else {
+    // Um den Fall abzufangen, dass die Client seite den einen leeren Suchstring in die URL einfügt
+    // Wird in der Client Seite zur sicherheit auch abgefangen
     searchProductData = await searchProduct("");
   }
 

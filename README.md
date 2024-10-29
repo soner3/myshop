@@ -36,6 +36,9 @@ Der Quellcode der gesamten Application ist im 'src' Ordner.
 
 Der Ordner besteht aus folgenden Ordnern und einer Datei
 
+Info: Sämtliche HTML Entitätszeichen sind nicht gegoogelt oder von woanders. ESLint von Next.js
+überprüft den text in den HTML-Tags und gibt an, dass das Zeichen mit den HTML-Entitäten ersetzt werden sollen.
+
 1. app
 2. components
 3. data
