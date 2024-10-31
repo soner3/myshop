@@ -2,6 +2,11 @@
 
 Ein Online-Shop als Abschlussprojekt meines Kurses
 
+## Kontaktformular
+
+Fügen sie ihren Link in zu WebHook.site in folgender
+Datei ein: src\data\contactData.ts
+
 ## Projekt starten
 
 Um das Projekt zu starten, musst du folgende Befehle im Terminal ausführen:
