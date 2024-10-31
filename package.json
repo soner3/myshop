@@ -1,5 +1,5 @@
 {
-  "name": "shopzilla",
+  "name": "myshop",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "@mui/material": "^6.0.2",
     "@reduxjs/toolkit": "^2.2.7",
     "framer-motion": "^11.5.4",
+    "myshop": "file:",
     "next": "14.2.9",
     "react": "^18",
     "react-dom": "^18",
@@ -23,6 +24,7 @@
     "react-redux": "^9.1.2",
     "react-toastify": "^10.0.5",
     "sharp": "^0.33.5",
+    "shopzilla": "file:",
     "zod": "^3.23.8"
   },
   "devDependencies": {
